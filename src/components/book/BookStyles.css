@@ -1,0 +1,389 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --book-width: min(40vw, 40vh);
+  --book-height: calc(var(--book-width) * 1.5);
+  --book-cover-thickness: 3px;
+  --book-thickness: min(10vw, 10vh);
+  --pages-offset: 3px;
+
+  /* --book-front-cover-image: url('../../../public/assets/img/atlantic/cover_front.webp'); */
+  /* --book-front-inside-image: url('../../../public/assets/img/atlantic/page_1.webp'); */
+  /* --book-spine-cover-image: url('../../../public/assets/img/atlantic/cover_spine.webp'); */
+  /* --book-spine-inside-image: #100F0D;  */
+  /* --book-back-cover-image: url('../../../public/assets/img/atlantic/cover_back.webp'); */
+  /* --book-back-inside-image: #100F0D; */
+
+  /* --book-first-page: url('../../../public/assets/img/atlantic/page_2.webp'); */
+
+  /* --book-pages-image: url('../../../public/assets/img/pages.webp'); */
+}
+
+/* body {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+
+  background-color: black;
+
+  font-family: "Poppins", sans-serif;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+} */
+
+/* .page {
+  width: 100vw;
+  height: 100vh;
+
+  position: relative;
+  overflow: auto;
+} */
+
+.container {
+  /* position: fixed; */
+  /* top: 0; */
+
+  /* min-height: 100vh; */
+  /* width: 100%; */
+  width: var(--book-thickness);
+  height: var(--book-height);
+  padding-left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: -1;
+  overflow: hidden;
+}
+
+.card {
+  /* width: var(--book-width); */
+  /* height: var(--book-height); */
+
+  position: relative;
+  /* transform: rotateX(55deg) rotateZ(-35deg); */
+  transform: rotateX(0deg) rotateY(90deg);
+  /* transform: rotateX(-20deg) rotateY(90deg); */
+  transform-style: preserve-3d;
+  transform-origin: left;
+}
+
+.book-cover {
+  position: absolute;
+
+  /* width: var(--book-width);
+  height: var(--book-height); */
+
+  transform-style: preserve-3d;
+}
+
+.position-relative {
+  height: 100%;
+  width: 100%;
+
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.pane.top {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  transform: translateZ(var(--book-cover-thickness));
+}
+
+.book-cover.front {
+  left: var(--book-cover-thickness);
+
+  transform: translateZ(calc(var(--book-thickness) - var(--book-cover-thickness)));
+}
+
+.book-cover.front .position-relative {
+  transform: rotateY(0deg);
+  transform-origin: left;
+}
+
+.book-cover.front .cover-display {
+  height: 100%;
+  width: 100%;
+
+  /* background: var(--book-front-cover-image); */
+  background-size: cover;
+}
+
+.book-cover.front .horizontal.left .image-display {
+  height: 100%;
+  width: 100%;
+
+  /* background: var(--book-front-cover-image); */
+  background-size: cover;
+  background-position-x: right;
+}
+
+.book-cover.front .horizontal.right .image-display {
+  height: 100%;
+  width: 100%;
+
+  /* background: var(--book-front-cover-image); */
+  background-size: cover;
+  background-position-x: right;
+}
+
+.book-cover.front .vertical.top .image-display {
+  height: 100%;
+  width: 100%;
+
+  /* background: var(--book-front-cover-image); */
+  background: cover;
+  background-position-y: top;
+}
+
+.book-cover.front .vertical.bottom .image-display {
+  height: 100%;
+  width: 100%;
+
+  /* background: var(--book-front-cover-image); */
+  background-size: cover;
+  background-position-y: bottom;
+}
+
+.book-cover.front .inside.image-display {
+  height: 100%;
+  width: 100%;
+
+  /* background: var(--book-front-inside-image); */
+  background-size: cover;
+
+  transform: rotateY(180deg);
+}
+
+.book-cover.back .cover-display {
+  height: 100%;
+  width: 100%;
+
+  /* background: var(--book-back-cover-image); */
+  background-size: cover;
+
+  transform: rotateY(180deg);
+}
+
+.book-cover.back .pane.top .inside.image-display {
+  height: 100%;
+  width: 100%;
+
+  /* background: var(--book-back-inside-image); */
+}
+
+.book-cover.back .horizontal.right .image-display {
+  height: 100%;
+  width: 100%;
+
+  /* background: var(--book-back-cover-image); */
+  background-size: cover;
+  background-position-x: right;
+}
+
+.book-cover.back .vertical.top .image-display {
+  height: 100%;
+  width: 100%;
+
+  /* background: var(--book-back-cover-image); */
+  background-size: cover;
+  background-position-y: top;
+
+  transform: rotateY(180deg);
+}
+
+.book-cover.back .vertical.bottom .image-display {
+  height: 100%;
+  width: 100%;
+
+  /* background: var(--book-back-cover-image); */
+  background-size: cover;
+  background-position-y: bottom;
+
+  transform: rotateY(180deg);
+}
+
+.sides {
+  position: absolute;
+}
+
+.sides.horizontal {
+  top: 0;
+  bottom: 0;
+
+  width: var(--book-cover-thickness);
+}
+
+.sides.left {
+  left: 0;
+
+  transform: rotateY(-90deg);
+  transform-origin: left;
+}
+
+.sides.right {
+  right: 0;
+
+  transform: rotateY(90deg);
+  transform-origin: right;
+}
+
+.sides.vertical {
+  left: 0;
+  right: 0;
+
+  height: var(--book-cover-thickness);
+}
+
+.sides.top {
+  top: 0;
+
+  transform: rotateX(90deg);
+  transform-origin: top;
+}
+
+.sides.bottom {
+  bottom: 0;
+
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+}
+
+.spine {
+  position: absolute;
+  left: var(--book-cover-thickness);
+
+  width: calc(var(--book-thickness) - var(--book-cover-thickness));
+  height: var(--book-height);
+
+  background: lightgrey;
+
+  transform: rotateY(-90deg);
+  transform-origin: left;
+  transform-style: preserve-3d;
+}
+
+.spine .inside.image-display {
+  height: 100%;
+  width: 100%;
+
+  /* background: var(--book-spine-inside-image); */
+  background-size: cover;
+
+  transform: rotateY(180deg);
+}
+
+.spine .pane.top .cover-display {
+  height: 100%;
+  width: 100%;
+
+  /* background: var(--book-spine-cover-image); */
+  background-size: cover;
+  background-position: center;
+}
+
+.spine .horizontal.right {
+  /* background: var(--book-spine-cover-image); */
+  background-size: cover;
+  background-position-y: left;
+}
+
+.spine .vertical.top {
+  /* background: var(--book-spine-cover-image); */
+  background-size: cover;
+  background-position-y: top;
+}
+
+.spine .vertical.bottom {
+  /* background: var(--book-spine-cover-image); */
+  background-size: cover;
+  background-position-y: bottom;
+}
+
+.pages {
+  position: absolute;
+
+  /* background: var(--book-pages-image); */
+  background-size: cover;
+
+  transform-style: preserve-3d;
+}
+
+.pages.bottom {
+  bottom: var(--pages-offset);
+  right: var(--pages-offset);
+
+  /* width: calc(var(--book-width) - var(--pages-offset) - var(--book-cover-thickness)); */
+  /* height: calc(var(--book-thickness) - (2 * var(--book-cover-thickness))); */
+  border-radius: 2px 0 0 2px;
+
+  transform: rotateX(-90deg) translateY(calc(-1 * var(--book-cover-thickness)));
+  transform-origin: bottom;
+}
+
+.pages.top {
+  top: var(--pages-offset);
+  right: var(--pages-offset);
+
+  /* width: calc(var(--book-width) - var(--pages-offset) - var(--book-cover-thickness)); */
+  /* height: calc(var(--book-thickness) - (2 * var(--book-cover-thickness))); */
+  border-radius: 2px 0 0 2px;
+
+  transform: rotateX(90deg) translateY(calc(1 * var(--book-cover-thickness)));
+  transform-origin: top;
+}
+
+.pages.right {
+  top: var(--pages-offset);
+  bottom: var(--pages-offset);
+  right: var(--pages-offset);
+
+  width: calc(var(--book-thickness) - (2 * var(--book-cover-thickness)));
+  height: calc(var(--book-height) - (2 * var(--pages-offset)));
+
+  transform: rotateY(90deg) translateX(calc(-1 * var(--book-cover-thickness)));
+  transform-origin: right;
+}
+
+.pages.right>div.image-display {
+  height: calc(var(--book-thickness) - (2 * var(--book-cover-thickness)));
+  width: calc(var(--book-height) - (2 * var(--pages-offset)));
+
+  /* background: var(--book-pages-image); */
+  background-size: cover;
+
+  transform: rotate(90deg) translateY(-50%) translateX(calc(-0.5 * var(--book-thickness) + var(--pages-offset)));
+  transform-origin: left;
+}
+
+.first-page {
+  position: absolute;
+  top: var(--pages-offset);
+  bottom: var(--pages-offset);
+  right: var(--pages-offset);
+  left: 1px;
+  /* var(--book-cover-thickness); */
+
+  /* background: var(--book-first-page); */
+  background-size: cover;
+
+  transform: translateZ(calc(var(--book-thickness) - var(--book-cover-thickness) + 0px));
+}
+
+.scroll-content {
+  height: 200vh;
+
+  position: relative;
+  z-index: 2;
+}

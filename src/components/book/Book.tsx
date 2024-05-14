@@ -156,13 +156,13 @@ export default function Book({
               <div className="cover-display" style={{
                 backgroundImage: `url(${bookCoverBack})`,
               }} />
-              <div className="sides horizontal right" style={{
+              {/* <div className="sides horizontal right" style={{
                 width: bookCoverThickness,
               }}>
                 <div className="image-display" style={{
                   backgroundImage: `url(${bookCoverBack})`,
                 }} />
-              </div>
+              </div> */}
               <div className="sides vertical top" style={{
                 height: bookCoverThickness,
               }}>
@@ -170,7 +170,7 @@ export default function Book({
                   backgroundImage: `url(${bookCoverBack})`,
                 }} />
               </div>
-              <div className="sides vertical bottom" style={{
+              {/* <div className="sides vertical bottom" style={{
                 height: bookCoverThickness,
               }}>
                 <div className="image-display" style={{
@@ -183,7 +183,7 @@ export default function Book({
                 <div className="inside image-display" style={{
                   background: insideCoverColor,
                 }} />
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -194,24 +194,24 @@ export default function Book({
             height: bookHeight,
           }}>
             <div className="position-relative">
-              <div className="inside image-display" style={{
+              {/* <div className="inside image-display" style={{
                 background: insideCoverColor,
               }} />
               <div className="sides horizontal right" style={{
                 width: bookCoverThickness,
 
                 backgroundImage: `url(${bookCoverSpine})`,
-              }} />
+              }} /> */}
               <div className="sides vertical top" style={{
                 height: bookCoverThickness,
 
                 backgroundImage: `url(${bookCoverSpine})`,
               }} />
-              <div className="sides vertical bottom" style={{
+              {/* <div className="sides vertical bottom" style={{
                 height: bookCoverThickness,
 
                 backgroundImage: `url(${bookCoverSpine})`,
-              }} />
+              }} /> */}
               <div className="pane top" style={{
                 transform: `translateZ(${bookCoverThickness})`,
               }}>
@@ -231,9 +231,9 @@ export default function Book({
             height: bookHeight,
           }}>
             <div id="book-cover-front" className="position-relative">
-              <div className="inside image-display" style={{
+              {/* <div className="inside image-display" style={{
                 backgroundImage: `url(${bookPage1})`,
-              }}></div>
+              }}></div> */}
               <div className="sides horizontal left" style={{
                 width: bookCoverThickness,
               }}>
@@ -241,13 +241,13 @@ export default function Book({
                   backgroundImage: `url(${bookCoverFront})`,
                 }} />
               </div>
-              <div className="sides horizontal right" style={{
+              {/* <div className="sides horizontal right" style={{
                 width: bookCoverThickness,
               }}>
                 <div className="image-display" style={{
                   backgroundImage: `url(${bookCoverFront})`,
                 }} />
-              </div>
+              </div> */}
               <div className="sides vertical top" style={{
                 height: bookCoverThickness,
               }}>
@@ -255,7 +255,7 @@ export default function Book({
                   backgroundImage: `url(${bookCoverFront})`,
                 }} />
               </div>
-              <div className="sides vertical bottom" style={{
+              {/* <div className="sides vertical bottom" style={{
                 height: bookCoverThickness,
               }}>
                 <div className="image-display" style={{
@@ -268,11 +268,11 @@ export default function Book({
                 <div className="cover-display" style={{
                   backgroundImage: `url(${bookCoverFront})`,
                 }} />
-              </div>
+              </div> */}
             </div>
           </div>
 
-          <div className="first-page" style={{
+          {/* <div className="first-page" style={{
             top: pagesOffset,
             bottom: pagesOffset,
             right: pagesOffset,
@@ -280,9 +280,9 @@ export default function Book({
             backgroundImage: `url(${bookPage2})`,
 
             transform: `translateZ(calc(${bookThickness} - ${bookCoverThickness}))`,
-          }} />
+          }} /> */}
 
-          <div className="pages bottom" style={{
+          {/* <div className="pages bottom" style={{
             bottom: pagesOffset,
             right: pagesOffset,
 
@@ -292,7 +292,7 @@ export default function Book({
             backgroundImage: `url(${bookPages})`,
 
             transform: `rotateX(-90deg) translateY(calc(-1 * ${bookCoverThickness}))`,
-          }} />
+          }} /> */}
           <div className="pages top" style={{
             top: pagesOffset,
             right: pagesOffset,
@@ -304,7 +304,7 @@ export default function Book({
 
             transform: `rotateX(90deg) translateY(calc(1 * ${bookCoverThickness}))`,
           }} />
-          <div className="pages right" style={{
+          {/* <div className="pages right" style={{
             top: pagesOffset,
             bottom: pagesOffset,
             right: pagesOffset,
@@ -322,7 +322,7 @@ export default function Book({
 
               transform: `rotate(90deg) translateY(-50%) translateX(calc(-0.5 * ${bookThickness} + ${pagesOffset}))`,
             }} />
-          </div>
+          </div> */}
         </div>
       </div >
       {/* <div id='scroll-content' className='scroll-content' /> */}

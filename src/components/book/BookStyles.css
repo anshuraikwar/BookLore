@@ -5,11 +5,11 @@
 }
 
 :root {
-  --book-width: min(40vw, 40vh);
+  /* --book-width: min(40vw, 40vh);
   --book-height: calc(var(--book-width) * 1.5);
   --book-cover-thickness: 3px;
   --book-thickness: min(10vw, 10vh);
-  --pages-offset: 3px;
+  --pages-offset: 3px; */
 
   /* --book-front-cover-image: url('../../../public/assets/img/atlantic/cover_front.webp'); */
   /* --book-front-inside-image: url('../../../public/assets/img/atlantic/page_1.webp'); */
@@ -50,28 +50,30 @@
 
   /* min-height: 100vh; */
   /* width: 100%; */
-  width: var(--book-thickness);
-  height: var(--book-height);
-  padding-left: 0;
+  /* width: var(--book-thickness); */
+  /* height: var(--book-height); */
 
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
 
-  z-index: -1;
-  overflow: hidden;
+  /* z-index: -1; */
+  /* overflow: hidden; */
+  cursor: pointer;
 }
 
-.card {
+.book-base {
+  flex-shrink: 0;
   /* width: var(--book-width); */
   /* height: var(--book-height); */
 
   position: relative;
   /* transform: rotateX(55deg) rotateZ(-35deg); */
-  transform: rotateX(0deg) rotateY(90deg);
+  transform: rotateX(0deg) rotateY(90deg) translateY(0px);
   /* transform: rotateX(-20deg) rotateY(90deg); */
   transform-style: preserve-3d;
   transform-origin: left;
+  transition: transform 0.3s linear;
 }
 
 .book-cover {
@@ -98,13 +100,13 @@
   bottom: 0;
   left: 0;
 
-  transform: translateZ(var(--book-cover-thickness));
+  /* transform: translateZ(var(--book-cover-thickness)); */
 }
 
 .book-cover.front {
-  left: var(--book-cover-thickness);
+  /* left: var(--book-cover-thickness);
 
-  transform: translateZ(calc(var(--book-thickness) - var(--book-cover-thickness)));
+  transform: translateZ(calc(var(--book-thickness) - var(--book-cover-thickness))); */
 }
 
 .book-cover.front .position-relative {
@@ -173,7 +175,7 @@
   /* background: var(--book-back-cover-image); */
   background-size: cover;
 
-  transform: rotateY(180deg);
+  transform: rotateY(180deg) translateZ(0.1px);
 }
 
 .book-cover.back .pane.top .inside.image-display {
@@ -222,7 +224,7 @@
   top: 0;
   bottom: 0;
 
-  width: var(--book-cover-thickness);
+  /* width: var(--book-cover-thickness); */
 }
 
 .sides.left {
@@ -243,7 +245,7 @@
   left: 0;
   right: 0;
 
-  height: var(--book-cover-thickness);
+  /* height: var(--book-cover-thickness); */
 }
 
 .sides.top {
@@ -262,12 +264,12 @@
 
 .spine {
   position: absolute;
-  left: var(--book-cover-thickness);
+  /* left: var(--book-cover-thickness); */
 
-  width: calc(var(--book-thickness) - var(--book-cover-thickness));
-  height: var(--book-height);
+  /* width: calc(var(--book-thickness) - var(--book-cover-thickness)); */
+  /* height: var(--book-height); */
 
-  background: lightgrey;
+  /* background: lightgrey; */
 
   transform: rotateY(-90deg);
   transform-origin: left;
@@ -290,6 +292,7 @@
 
   /* background: var(--book-spine-cover-image); */
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
 }
 
@@ -321,67 +324,68 @@
 }
 
 .pages.bottom {
-  bottom: var(--pages-offset);
-  right: var(--pages-offset);
+  /* bottom: var(--pages-offset);
+  right: var(--pages-offset); */
 
   /* width: calc(var(--book-width) - var(--pages-offset) - var(--book-cover-thickness)); */
   /* height: calc(var(--book-thickness) - (2 * var(--book-cover-thickness))); */
   border-radius: 2px 0 0 2px;
 
-  transform: rotateX(-90deg) translateY(calc(-1 * var(--book-cover-thickness)));
+  /* transform: rotateX(-90deg) translateY(calc(-1 * var(--book-cover-thickness))); */
   transform-origin: bottom;
 }
 
 .pages.top {
-  top: var(--pages-offset);
-  right: var(--pages-offset);
+  /* top: var(--pages-offset);
+  right: var(--pages-offset); */
 
   /* width: calc(var(--book-width) - var(--pages-offset) - var(--book-cover-thickness)); */
   /* height: calc(var(--book-thickness) - (2 * var(--book-cover-thickness))); */
   border-radius: 2px 0 0 2px;
 
-  transform: rotateX(90deg) translateY(calc(1 * var(--book-cover-thickness)));
+  /* transform: rotateX(90deg) translateY(calc(1 * var(--book-cover-thickness))); */
   transform-origin: top;
 }
 
 .pages.right {
-  top: var(--pages-offset);
+  /* top: var(--pages-offset);
   bottom: var(--pages-offset);
-  right: var(--pages-offset);
+  right: var(--pages-offset); */
 
-  width: calc(var(--book-thickness) - (2 * var(--book-cover-thickness)));
-  height: calc(var(--book-height) - (2 * var(--pages-offset)));
+  /* width: calc(var(--book-thickness) - (2 * var(--book-cover-thickness)));
+  height: calc(var(--book-height) - (2 * var(--pages-offset))); */
 
-  transform: rotateY(90deg) translateX(calc(-1 * var(--book-cover-thickness)));
+  /* transform: rotateY(90deg) translateX(calc(-1 * var(--book-cover-thickness))); */
   transform-origin: right;
 }
 
 .pages.right>div.image-display {
-  height: calc(var(--book-thickness) - (2 * var(--book-cover-thickness)));
-  width: calc(var(--book-height) - (2 * var(--pages-offset)));
+  /* height: calc(var(--book-thickness) - (2 * var(--book-cover-thickness)));
+  width: calc(var(--book-height) - (2 * var(--pages-offset))); */
 
   /* background: var(--book-pages-image); */
   background-size: cover;
 
-  transform: rotate(90deg) translateY(-50%) translateX(calc(-0.5 * var(--book-thickness) + var(--pages-offset)));
+  /* transform: rotate(90deg) translateY(-50%) translateX(calc(-0.5 * var(--book-thickness) + var(--pages-offset))); */
   transform-origin: left;
 }
 
 .first-page {
   position: absolute;
-  top: var(--pages-offset);
+  /* top: var(--pages-offset);
   bottom: var(--pages-offset);
-  right: var(--pages-offset);
+  right: var(--pages-offset); */
   left: 1px;
   /* var(--book-cover-thickness); */
 
   /* background: var(--book-first-page); */
   background-size: cover;
 
-  transform: translateZ(calc(var(--book-thickness) - var(--book-cover-thickness) + 0px));
+  /* transform: translateZ(calc(var(--book-thickness) - var(--book-cover-thickness) + 0px)); */
 }
 
 .scroll-content {
+  width: 100%;
   height: 200vh;
 
   position: relative;

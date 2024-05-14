@@ -1,7 +1,12 @@
-.main {
+.bookshelf {
+  padding: 110px 50px;
+  max-width: 100vw;
+  /* height: 100vh; */
+
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 100vh;
+  /* justify-content: center; */
+  flex-wrap: wrap;
+  gap: 110px 2px;
+
+  overflow: auto;
 }

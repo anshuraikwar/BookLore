@@ -1,32 +1,54 @@
 "use client";
 
-import './BookStyles.css';
 import { useEffect } from 'react';
+import './BookStyles.css';
 
-import BookCoverFront from '../../../public/assets/img/atlantic/cover_front.webp';
-import BookPage1 from '../../../public/assets/img/atlantic/page_1.webp';
-import BookCoverSpine from '../../../public/assets/img/atlantic/cover_spine.webp';
-import BookCoverBack from '../../../public/assets/img/atlantic/cover_back.webp';
-import BookPage2 from '../../../public/assets/img/atlantic/page_2.webp';
-import BookPages from '../../../public/assets/img/pages.webp';
-import BookPagesVertical from '../../../public/assets/img/pages_v.webp';
+type BookPropType = {
+  bookId: string,
 
-export default function Book() {
-  const bookWidth = `min(40vw, 40vh)`;
-  const bookHeight= `calc(${bookWidth} * 1.5)`;
-  const bookCoverThickness= '3px';
-  const bookThickness = 'min(10vw, 10vh)';
-  const pagesOffset = '3px';
-  const insideCoverColor = '#100F0D';
+  bookWidth: string,
+  bookHeight: string,
+  bookCoverThickness: string,
+  bookThickness: string,
+  pagesOffset: string,
+  insideCoverColor: string,
 
+  bookCoverFront: string,
+  bookCoverSpine: string,
+  bookCoverBack: string,
+  bookPage1: string,
+  bookPage2: string,
+  bookPages: string,
+  bookPagesVertical: string,
+};
+
+export default function Book({
+  bookId,
+
+  bookWidth,
+  bookHeight,
+  bookCoverThickness,
+  bookThickness,
+  pagesOffset,
+  insideCoverColor,
+
+  bookCoverFront,
+  bookCoverSpine,
+  bookCoverBack,
+  bookPage1,
+  bookPage2,
+  bookPages,
+  bookPagesVertical,
+}: BookPropType) {
   useEffect(() => {
-    const page = document.getElementById("page");
+    const bookshelf = document.getElementById("bookshelf");
     const container = document.getElementById("container");
     const card = document.getElementById("card");
     const scrollContent = document.getElementById("scroll-content");
     const bookFrontCover = document.getElementById("book-cover-front");
 
-    page?.addEventListener("scroll", () => {
+    bookshelf?.addEventListener("scroll", () => {
+
       if (scrollContent) {
         const scrollContentBounding = scrollContent.getBoundingClientRect();
         const { top } = scrollContentBounding;
@@ -44,6 +66,7 @@ export default function Book() {
         var NewValue = (((OldValue - OldMin) * NewRange) / OldRange) + NewMin;
 
         if (container) {
+          console.log('containe: ', NewValue);
           container.style.paddingLeft = `${NewValue}%`;
         }
 
@@ -75,7 +98,6 @@ export default function Book() {
         if (card) {
           // card.style.transform = `rotateX(${NewRotateX}deg) rotateZ(${NewRotateZ}deg)`;
           card.style.transform = `rotateY(${NewRotateY}deg) rotateX(${NewRotateX}deg) rotateZ(${NewRotateZ}deg)`;
-
         }
 
         NewMin = 0;
@@ -91,126 +113,219 @@ export default function Book() {
     })
   }, []);
 
+  const handleMouseEnter = () => {
+    const card = document.getElementById(`${bookId}-card`);
+    if (card) {
+      console.log(`${bookId}-card`);
+      card.style.transform = `rotateX(-18deg) rotateY(90deg) translateY(12px)`;
+    }
+  }
+  const handleMouseLeave = () => {
+    const card = document.getElementById(`${bookId}-card`);
+    if (card) {
+      console.log(`${bookId}-card`);
+      card.style.transform = `rotateX(0deg) rotateY(90deg) translateY(0px)`;
+    }
+  }
+  
+
   return (
-    <div id="container" className="container">
-      <div id="card" className="card" style={{
-        width: bookWidth,
-        height: bookHeight,
-      }}>
-        <div className="book-cover back bottom" style={{
-        width: bookWidth,
-        height: bookHeight,
+    <>
+      <div
+        id="container"
+        className="container"
+        style={{
+          width: bookThickness,
+          height: bookHeight,
+
+          // height: '100vh',
+        }}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onClick={() => console.log(`${bookId}-card`)}
+      >
+        <div id={`${bookId}-card`} className="book-base" style={{
+          width: bookWidth,
+          height: bookHeight,
         }}>
-          <div className="position-relative">
-            <div className="cover-display" style={{
-              backgroundImage: `url(${BookCoverBack.src})`,
-            }} />
-            <div className="sides horizontal right">
-              <div className="image-display" style={{
-                backgroundImage: `url(${BookCoverBack.src})`,
+          <div className="book-cover back bottom" style={{
+            width: bookWidth,
+            height: bookHeight,
+          }}>
+            <div className="position-relative">
+              <div className="cover-display" style={{
+                backgroundImage: `url(${bookCoverBack})`,
               }} />
+              <div className="sides horizontal right" style={{
+                width: bookCoverThickness,
+              }}>
+                <div className="image-display" style={{
+                  backgroundImage: `url(${bookCoverBack})`,
+                }} />
+              </div>
+              <div className="sides vertical top" style={{
+                height: bookCoverThickness,
+              }}>
+                <div className="image-display" style={{
+                  backgroundImage: `url(${bookCoverBack})`,
+                }} />
+              </div>
+              <div className="sides vertical bottom" style={{
+                height: bookCoverThickness,
+              }}>
+                <div className="image-display" style={{
+                  backgroundImage: `url(${bookCoverBack})`,
+                }} />
+              </div>
+              <div className="pane top" style={{
+                transform: `translateZ(v${bookCoverThickness})`,
+              }}>
+                <div className="inside image-display" style={{
+                  background: insideCoverColor,
+                }} />
+              </div>
             </div>
-            <div className="sides vertical top">
-              <div className="image-display" style={{
-                backgroundImage: `url(${BookCoverBack.src})`,
-              }} />
-            </div>
-            <div className="sides vertical bottom">
-              <div className="image-display" style={{
-                backgroundImage: `url(${BookCoverBack.src})`,
-              }} />
-            </div>
-            <div className="pane top">
+          </div>
+
+          <div className="spine inside" style={{
+            left: bookCoverThickness,
+
+            width: `calc(${bookThickness} - ${bookCoverThickness})`,
+            height: bookHeight,
+          }}>
+            <div className="position-relative">
               <div className="inside image-display" style={{
                 background: insideCoverColor,
               }} />
+              <div className="sides horizontal right" style={{
+                width: bookCoverThickness,
+
+                backgroundImage: `url(${bookCoverSpine})`,
+              }} />
+              <div className="sides vertical top" style={{
+                height: bookCoverThickness,
+
+                backgroundImage: `url(${bookCoverSpine})`,
+              }} />
+              <div className="sides vertical bottom" style={{
+                height: bookCoverThickness,
+
+                backgroundImage: `url(${bookCoverSpine})`,
+              }} />
+              <div className="pane top" style={{
+                transform: `translateZ(${bookCoverThickness})`,
+              }}>
+                <div className="cover-display" style={{
+                  backgroundImage: `url(${bookCoverSpine})`,
+                }} />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="spine inside">
-          <div className="position-relative">
-            <div className="inside image-display" style={{
-              background: insideCoverColor,
-            }} />
-            <div className="sides horizontal right" style={{
-              backgroundImage: `url(${BookCoverSpine.src})`,
-            }} />
-            <div className="sides vertical top" style={{
-              backgroundImage: `url(${BookCoverSpine.src})`,
-            }} />
-            <div className="sides vertical bottom" style={{
-              backgroundImage: `url(${BookCoverSpine.src})`,
-            }} />
-            <div className="pane top">
-              <div className="cover-display" style={{
-                backgroundImage: `url(${BookCoverSpine.src})`,
-              }} />
+          <div className="book-cover front bottom" style={{
+            left: bookCoverThickness,
+
+            transform: `translateZ(calc(${bookThickness} - ${bookCoverThickness}))`,
+
+            width: bookWidth,
+            height: bookHeight,
+          }}>
+            <div id="book-cover-front" className="position-relative">
+              <div className="inside image-display" style={{
+                backgroundImage: `url(${bookPage1})`,
+              }}></div>
+              <div className="sides horizontal left" style={{
+                width: bookCoverThickness,
+              }}>
+                <div className="image-display" style={{
+                  backgroundImage: `url(${bookCoverFront})`,
+                }} />
+              </div>
+              <div className="sides horizontal right" style={{
+                width: bookCoverThickness,
+              }}>
+                <div className="image-display" style={{
+                  backgroundImage: `url(${bookCoverFront})`,
+                }} />
+              </div>
+              <div className="sides vertical top" style={{
+                height: bookCoverThickness,
+              }}>
+                <div className="image-display" style={{
+                  backgroundImage: `url(${bookCoverFront})`,
+                }} />
+              </div>
+              <div className="sides vertical bottom" style={{
+                height: bookCoverThickness,
+              }}>
+                <div className="image-display" style={{
+                  backgroundImage: `url(${bookCoverFront})`,
+                }} />
+              </div>
+              <div className="pane top" style={{
+                transform: `translateZ(v${bookCoverThickness})`,
+              }}>
+                <div className="cover-display" style={{
+                  backgroundImage: `url(${bookCoverFront})`,
+                }} />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="book-cover front bottom" style={{
-        width: bookWidth,
-        height: bookHeight,
-        }}>
-          <div id="book-cover-front" className="position-relative">
-            <div className="inside image-display" style={{
-              backgroundImage: `url(${BookPage1.src})`,
-            }}></div>
-            <div className="sides horizontal left">
-              <div className="image-display" style={{
-                backgroundImage: `url(${BookCoverFront.src})`,
-              }} />
-            </div>
-            <div className="sides horizontal right">
-              <div className="image-display" style={{
-                backgroundImage: `url(${BookCoverFront.src})`,
-              }} />
-            </div>
-            <div className="sides vertical top">
-              <div className="image-display" style={{
-                backgroundImage: `url(${BookCoverFront.src})`,
-              }} />
-            </div>
-            <div className="sides vertical bottom">
-              <div className="image-display" style={{
-                backgroundImage: `url(${BookCoverFront.src})`,
-              }} />
-            </div>
-            <div className="pane top">
-              <div className="cover-display" style={{
-                backgroundImage: `url(${BookCoverFront.src})`,
-              }} />
-            </div>
+          <div className="first-page" style={{
+            top: pagesOffset,
+            bottom: pagesOffset,
+            right: pagesOffset,
+
+            backgroundImage: `url(${bookPage2})`,
+
+            transform: `translateZ(calc(${bookThickness} - ${bookCoverThickness}))`,
+          }} />
+
+          <div className="pages bottom" style={{
+            bottom: pagesOffset,
+            right: pagesOffset,
+
+            width: `calc(${bookWidth} - ${pagesOffset} - ${bookCoverThickness})`,
+            height: `calc(${bookThickness} - (2 * ${bookCoverThickness}))`,
+
+            backgroundImage: `url(${bookPages})`,
+
+            transform: `rotateX(-90deg) translateY(calc(-1 * ${bookCoverThickness}))`,
+          }} />
+          <div className="pages top" style={{
+            top: pagesOffset,
+            right: pagesOffset,
+
+            width: `calc(${bookWidth} - ${pagesOffset} - ${bookCoverThickness})`,
+            height: `calc(${bookThickness} - (2 * ${bookCoverThickness}))`,
+
+            backgroundImage: `url(${bookPages})`,
+
+            transform: `rotateX(90deg) translateY(calc(1 * ${bookCoverThickness}))`,
+          }} />
+          <div className="pages right" style={{
+            top: pagesOffset,
+            bottom: pagesOffset,
+            right: pagesOffset,
+
+            width: `calc(${bookThickness} - (2 * ${bookCoverThickness}))`,
+            // height: `calc(${bookWidth} - ${pagesOffset} - ${bookCoverThickness})`,
+
+            backgroundImage: `url(${bookPagesVertical})`,
+
+            transform: `rotateY(90deg) translateX(calc(-1 * ${bookCoverThickness}))`,
+          }}>
+            <div className="image-display" style={{
+              height: `calc(${bookThickness} - (2 * ${bookCoverThickness}))`,
+              width: `calc(${bookHeight} - (2 * ${pagesOffset}))`,
+
+              transform: `rotate(90deg) translateY(-50%) translateX(calc(-0.5 * ${bookThickness} + ${pagesOffset}))`,
+            }} />
           </div>
         </div>
-
-        <div className="first-page" style={{
-          backgroundImage: `url(${BookPage2.src})`,
-        }} />
-
-        <div className="pages bottom" style={{
-          width: `calc(${bookWidth} - ${pagesOffset} - ${bookCoverThickness})`,
-          height: `calc(${bookThickness} - (2 * ${bookCoverThickness}))`,
-
-          backgroundImage: `url(${BookPages.src})`,
-        }} />
-        <div className="pages top" style={{
-          width: `calc(${bookWidth} - ${pagesOffset} - ${bookCoverThickness})`,
-          height: `calc(${bookThickness} - (2 * ${bookCoverThickness}))`,
-
-          backgroundImage: `url(${BookPages.src})`,
-        }} />
-        <div className="pages right" style={{
-          width: `calc(${bookThickness} - (2 * ${bookCoverThickness}))`,
-          height: `calc(${bookWidth} - ${pagesOffset} - ${bookCoverThickness})`,
-
-          backgroundImage: `url(${BookPagesVertical.src})`,
-        }}>
-          <div className="image-display" />
-        </div>
-      </div>
-    </div>
+      </div >
+      {/* <div id='scroll-content' className='scroll-content' /> */}
+    </>
   )
 }

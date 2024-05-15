@@ -2,25 +2,7 @@
 
 import React, { useEffect } from 'react';
 import './BookStyles.css';
-
-export type BookType = {
-  id: string,
-
-  height: string,
-  width: string,
-  coverThickness: string,
-  thickness: string,
-  pagesOffset: string,
-  insideCoverColor: string,
-
-  coverFront: string,
-  coverSpine: string,
-  coverBack: string,
-  page1: string,
-  page2: string,
-  pages: string,
-  pagesVertical: string,
-}
+import { BookType } from "../../types/bookType";
 
 export type BookPropType = {
   show3DPreview: boolean,
@@ -35,14 +17,14 @@ export default function Book({
 }: BookPropType) {
   const {
     id: bookId,
-  
+
     height: bookHeight,
     width: bookWidth,
     coverThickness: bookCoverThickness,
     thickness: bookThickness,
     pagesOffset,
     insideCoverColor,
-  
+
     coverFront: bookCoverFront,
     coverSpine: bookCoverSpine,
     coverBack: bookCoverBack,
@@ -51,79 +33,6 @@ export default function Book({
     pages: bookPages,
     pagesVertical: bookPagesVertical,
   } = book;
-
-  useEffect(() => {
-    const bookshelf = document.getElementById("bookshelf");
-    const container = document.getElementById("container");
-    const card = document.getElementById("card");
-    const scrollContent = document.getElementById("scroll-content");
-    const bookFrontCover = document.getElementById("book-cover-front");
-
-    bookshelf?.addEventListener("scroll", () => {
-
-      if (scrollContent) {
-        const scrollContentBounding = scrollContent.getBoundingClientRect();
-        const { top } = scrollContentBounding;
-
-        const OldValue = Math.abs(top);
-
-        const OldMax = scrollContent.clientHeight - window.innerHeight;
-        var OldMin = OldMax / 2;
-        var OldRange = (OldMax - OldMin);
-
-        var NewMin = 0;
-        var NewMax = 10;
-        var NewRange = (NewMax - NewMin);
-
-        var NewValue = (((OldValue - OldMin) * NewRange) / OldRange) + NewMin;
-
-        if (container) {
-          console.log('containe: ', NewValue);
-          container.style.paddingLeft = `${NewValue}%`;
-        }
-
-        OldMin = 0;
-        OldRange = (OldMax - OldMin);
-
-        // NewMin = 10;
-        // NewMax = 35;
-        // NewRange = (NewMax - NewMin);
-
-        // NewValue = (((OldValue - OldMin) * NewRange) / OldRange) + NewMin;
-        // NewRotateZ = NewValue/2 - NewMax;
-        const NewRotateZ = -30
-
-        NewMin = 0;
-        NewMax = 90;
-        NewRange = (NewMax - NewMin);
-
-        NewValue = (((OldValue - OldMin) * NewRange) / OldRange) + NewMin;
-        const NewRotateX = Math.abs(NewValue - (NewMax / 2));
-
-        NewMin = 0;
-        NewMax = 360;
-        NewRange = (NewMax - NewMin);
-
-        var NewRotateY = (((OldValue - OldMin) * NewRange) / OldRange) + NewMin;
-        NewRotateY = 0 - NewRotateY;
-
-        if (card) {
-          // card.style.transform = `rotateX(${NewRotateX}deg) rotateZ(${NewRotateZ}deg)`;
-          card.style.transform = `rotateY(${NewRotateY}deg) rotateX(${NewRotateX}deg) rotateZ(${NewRotateZ}deg)`;
-        }
-
-        NewMin = 0;
-        NewMax = 170;
-        NewRange = (NewMax - NewMin);
-
-        NewValue = (((OldValue - OldMin) * NewRange) / OldRange) + NewMin;
-
-        if (bookFrontCover) {
-          bookFrontCover.style.transform = `rotateY(-${NewValue}deg)`;
-        }
-      }
-    })
-  }, []);
 
   const handleMouseEnter = () => {
     const card = document.getElementById(`${bookId}-card`);
@@ -144,7 +53,7 @@ export default function Book({
   return (
     <React.Fragment key={`book-${bookId}`}>
       <div
-        id={`book-${bookId}-container`}
+        id={`${bookId}-book-container`}
         className="container"
         style={{
           width: bookThickness,
@@ -152,13 +61,25 @@ export default function Book({
 
           // height: '100vh',
         }}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+        onMouseEnter={() => {
+          if (!show3DPreview) {
+            handleMouseEnter();
+          }
+        }}
+        onMouseLeave={() => {
+          if (!show3DPreview) {
+            handleMouseLeave();
+          }
+        }}
         onClick={() => console.log(`${bookId}-card`)}
       >
         <div id={`${bookId}-card`} className="book-base" style={{
           width: bookWidth,
           height: bookHeight,
+
+          transform: show3DPreview
+            ? 'rotateX(55deg) rotateZ(-35deg)'
+            : 'rotateX(0deg) rotateY(90deg) translateY(0px)'
         }}>
           <div className="book-cover back bottom" style={{
             width: bookWidth,
@@ -241,14 +162,14 @@ export default function Book({
           </div>
 
           <div className="book-cover front bottom" style={{
-            left: bookCoverThickness,
+            // left: bookCoverThickness,
 
             transform: `translateZ(calc(${bookThickness} - ${bookCoverThickness}))`,
 
             width: bookWidth,
             height: bookHeight,
           }}>
-            <div id="book-cover-front" className="position-relative">
+            <div id={`${bookId}-cover-front`} className="position-relative">
               {show3DPreview && (
                 <div className="inside image-display" style={{
                   backgroundImage: `url(${bookPage1})`,
@@ -287,7 +208,7 @@ export default function Book({
                     }} />
                   </div>
                   <div className="pane top" style={{
-                    transform: `translateZ(v${bookCoverThickness})`,
+                    transform: `translateZ(${bookCoverThickness})`,
                   }}>
                     <div className="cover-display" style={{
                       backgroundImage: `url(${bookCoverFront})`,

@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 
-import Book, {BookType} from "@/components/book/Book";
+import Book from "@/components/book/Book";
+import { BookType } from "../types/bookType";
 import styles from "./page.module.css";
 
 import { books } from '../config/bookList';

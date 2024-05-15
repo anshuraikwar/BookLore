@@ -107,8 +107,8 @@ import Book16CoverSpine from '../../public/assets/img/book_16/cover_spine.webp';
 import Book16CoverBack from '../../public/assets/img/book_16/cover_back.webp';
 import Book16Page1 from '../../public/assets/img/book_16/page_1.webp';
 import Book16Page2 from '../../public/assets/img/book_16/page_2.webp';
-import Book16Pages from '../../public/assets/img/pages.webp';
-import Book16PagesVertical from '../../public/assets/img/pages_v.webp';
+import Book16Pages from '../../public/assets/img/pages_thick.webp';
+import Book16PagesVertical from '../../public/assets/img/pages_v_thick.webp';
 
 import Book17CoverFront from '../../public/assets/img/book_17/cover_front.webp';
 import Book17CoverSpine from '../../public/assets/img/book_17/cover_spine.webp';
@@ -123,8 +123,8 @@ import Book18CoverSpine from '../../public/assets/img/book_18/cover_spine.webp';
 import Book18CoverBack from '../../public/assets/img/book_18/cover_back.webp';
 import Book18Page1 from '../../public/assets/img/book_18/page_1.webp';
 import Book18Page2 from '../../public/assets/img/book_18/page_2.webp';
-import Book18Pages from '../../public/assets/img/pages.webp';
-import Book18PagesVertical from '../../public/assets/img/pages_v.webp';
+import Book18Pages from '../../public/assets/img/pages_thick.webp';
+import Book18PagesVertical from '../../public/assets/img/pages_v_thick.webp';
 
 import Book19CoverFront from '../../public/assets/img/book_19/cover_front.webp';
 import Book19CoverSpine from '../../public/assets/img/book_19/cover_spine.webp';
@@ -134,13 +134,13 @@ import Book19Page2 from '../../public/assets/img/book_19/page_2.webp';
 import Book19Pages from '../../public/assets/img/pages.webp';
 import Book19PagesVertical from '../../public/assets/img/pages_v.webp';
 
-// import Book20CoverFront from '../../public/assets/img/book_20/cover_front.webp';
-// import Book20CoverSpine from '../../public/assets/img/book_20/cover_spine.webp';
-// import Book20CoverBack from '../../public/assets/img/book_20/cover_back.webp';
-// import Book20Page1 from '../../public/assets/img/book_20/page_1.webp';
-// import Book20Page2 from '../../public/assets/img/book_20/page_2.webp';
-// import Book20Pages from '../../public/assets/img/pages.webp';
-// import Book20PagesVertical from '../../public/assets/img/pages_v.webp';
+import Book20CoverFront from '../../public/assets/img/book_20/cover_front.webp';
+import Book20CoverSpine from '../../public/assets/img/book_20/cover_spine.webp';
+import Book20CoverBack from '../../public/assets/img/book_20/cover_back.webp';
+import Book20Page1 from '../../public/assets/img/book_20/page_1.webp';
+import Book20Page2 from '../../public/assets/img/book_20/page_2.webp';
+import Book20Pages from '../../public/assets/img/pages_thick.webp';
+import Book20PagesVertical from '../../public/assets/img/pages_v_thick.webp';
 
 import Book21CoverFront from '../../public/assets/img/book_21/cover_front.webp';
 import Book21CoverSpine from '../../public/assets/img/book_21/cover_spine.webp';
@@ -155,8 +155,8 @@ import Book22CoverSpine from '../../public/assets/img/book_22/cover_spine.webp';
 import Book22CoverBack from '../../public/assets/img/book_22/cover_back.webp';
 import Book22Page1 from '../../public/assets/img/book_22/page_1.webp';
 import Book22Page2 from '../../public/assets/img/book_22/page_2.webp';
-import Book22Pages from '../../public/assets/img/pages.webp';
-import Book22PagesVertical from '../../public/assets/img/pages_v.webp';
+import Book22Pages from '../../public/assets/img/pages_thick.webp';
+import Book22PagesVertical from '../../public/assets/img/pages_v_thick.webp';
 
 import Book23CoverFront from '../../public/assets/img/book_23/cover_front.webp';
 import Book23CoverSpine from '../../public/assets/img/book_23/cover_spine.webp';
@@ -171,24 +171,24 @@ import Book24CoverSpine from '../../public/assets/img/book_24/cover_spine.webp';
 import Book24CoverBack from '../../public/assets/img/book_24/cover_back.webp';
 import Book24Page1 from '../../public/assets/img/book_24/page_1.webp';
 import Book24Page2 from '../../public/assets/img/book_24/page_2.webp';
-import Book24Pages from '../../public/assets/img/pages.webp';
-import Book24PagesVertical from '../../public/assets/img/pages_v.webp';
+import Book24Pages from '../../public/assets/img/pages_thick.webp';
+import Book24PagesVertical from '../../public/assets/img/pages_v_thick.webp';
 
 import SansInUseBookCoverFront from '../../public/assets/img/sans_in_use/cover_front.webp';
 import SansInUseBookCoverSpine from '../../public/assets/img/sans_in_use/cover_spine.webp';
 import SansInUseBookCoverBack from '../../public/assets/img/sans_in_use/cover_back.webp';
 import SansInUseBookPage1 from '../../public/assets/img/sans_in_use/page_1.webp';
 import SansInUseBookPage2 from '../../public/assets/img/sans_in_use/page_2.webp';
-import SansInUseBookPages from '../../public/assets/img/pages.webp';
-import SansInUseBookPagesVertical from '../../public/assets/img/pages_v.webp';
+import SansInUseBookPages from '../../public/assets/img/pages_thick.webp';
+import SansInUseBookPagesVertical from '../../public/assets/img/pages_v_thick.webp';
 
 import SerifInUseBookCoverFront from '../../public/assets/img/serif_in_use/cover_front.webp';
 import SerifInUseBookCoverSpine from '../../public/assets/img/serif_in_use/cover_spine.webp';
 import SerifInUseBookCoverBack from '../../public/assets/img/serif_in_use/cover_back.webp';
 import SerifInUseBookPage1 from '../../public/assets/img/serif_in_use/page_1.webp';
 import SerifInUseBookPage2 from '../../public/assets/img/serif_in_use/page_2.webp';
-import SerifInUseBookPages from '../../public/assets/img/pages.webp';
-import SerifInUseBookPagesVertical from '../../public/assets/img/pages_v.webp';
+import SerifInUseBookPages from '../../public/assets/img/pages_thick.webp';
+import SerifInUseBookPagesVertical from '../../public/assets/img/pages_v_thick.webp';
 
 const bookHeight = 'min(60vw, 60vh)';
 
@@ -231,7 +231,7 @@ export const books = [
   },
   {
     id: 'farenheit-451',
-    
+
     height: bookHeight,
     width: `calc(${bookHeight} * 0.5)`,
     coverThickness: '3px',
@@ -249,7 +249,7 @@ export const books = [
   },
   {
     id: 'isnt-love',
-    
+
     height: bookHeight,
     width: `calc(${bookHeight} * 0.5)`,
     coverThickness: '3px',
@@ -267,7 +267,7 @@ export const books = [
   },
   {
     id: 'merry-fkin-christmas',
-    
+
     height: bookHeight,
     width: `calc(${bookHeight} * 0.5)`,
     coverThickness: '3px',
@@ -285,7 +285,7 @@ export const books = [
   },
   {
     id: 'newropia',
-    
+
     height: bookHeight,
     width: `calc(${bookHeight} * 0.5)`,
     coverThickness: '3px',
@@ -303,7 +303,7 @@ export const books = [
   },
   {
     id: 'path',
-    
+
     height: bookHeight,
     width: `calc(${bookHeight} * 0.5)`,
     coverThickness: '3px',
@@ -321,7 +321,7 @@ export const books = [
   },
   {
     id: 'umbra',
-    
+
     height: bookHeight,
     width: `calc(${bookHeight} * 0.5)`,
     coverThickness: '3px',
@@ -339,7 +339,7 @@ export const books = [
   },
   {
     id: 'book_11',
-    
+
     height: bookHeight,
     width: `calc(${bookHeight} * 0.5)`,
     coverThickness: '3px',
@@ -357,7 +357,7 @@ export const books = [
   },
   {
     id: 'book_12',
-    
+
     height: bookHeight,
     width: `calc(${bookHeight} * 0.5)`,
     coverThickness: '3px',
@@ -375,7 +375,7 @@ export const books = [
   },
   {
     id: 'book_13',
-    
+
     height: bookHeight,
     width: `calc(${bookHeight} * 0.5)`,
     coverThickness: '3px',
@@ -393,7 +393,7 @@ export const books = [
   },
   {
     id: 'book_14',
-    
+
     height: bookHeight,
     width: `calc(${bookHeight} * 0.5)`,
     coverThickness: '3px',
@@ -411,7 +411,7 @@ export const books = [
   },
   {
     id: 'book_15',
-    
+
     height: bookHeight,
     width: `calc(${bookHeight} * 0.5)`,
     coverThickness: '3px',
@@ -429,7 +429,7 @@ export const books = [
   },
   {
     id: 'book_16',
-    
+
     height: bookHeight,
     width: `calc(${bookHeight} * 0.5)`,
     coverThickness: '3px',
@@ -447,7 +447,7 @@ export const books = [
   },
   {
     id: 'book_17',
-    
+
     height: bookHeight,
     width: `calc(${bookHeight} * 0.5)`,
     coverThickness: '3px',
@@ -465,7 +465,7 @@ export const books = [
   },
   {
     id: 'book_18',
-    
+
     height: bookHeight,
     width: `calc(${bookHeight} * 0.5)`,
     coverThickness: '3px',
@@ -483,7 +483,7 @@ export const books = [
   },
   {
     id: 'book_19',
-    
+
     height: bookHeight,
     width: `calc(${bookHeight} * 0.5)`,
     coverThickness: '3px',
@@ -499,27 +499,27 @@ export const books = [
     pages: Book19Pages.src,
     pagesVertical: Book19PagesVertical.src,
   },
-  // {
-  //   id: 'book_20',
-    
-  //   height: bookHeight,
-  //   width: `calc(${bookHeight} * 0.5)`,
-  //   coverThickness: '3px',
-  //   thickness: 'min(5.8vw, 5.8vh)', // 'min(9.3vw, 6.4vh)',
-  //   pagesOffset: '3px',
-  //   insideCoverColor: '#100F0D',
+  {
+    id: 'book_20',
 
-  //   coverFront: Book20CoverFront.src,
-  //   coverSpine: Book20CoverSpine.src,
-  //   coverBack: Book20CoverBack.src,
-  //   page1: Book20Page1.src,
-  //   page2: Book20Page2.src,
-  //   pages: Book20Pages.src,
-  //   pagesVertical: Book20PagesVertical.src,
-  // },
+    height: bookHeight,
+    width: `calc(${bookHeight} * 0.5)`,
+    coverThickness: '3px',
+    thickness: 'min(14.8vw, 14.8vh)', // 'min(9.3vw, 6.4vh)',
+    pagesOffset: '3px',
+    insideCoverColor: '#100F0D',
+
+    coverFront: Book20CoverFront.src,
+    coverSpine: Book20CoverSpine.src,
+    coverBack: Book20CoverBack.src,
+    page1: Book20Page1.src,
+    page2: Book20Page2.src,
+    pages: Book20Pages.src,
+    pagesVertical: Book20PagesVertical.src,
+  },
   {
     id: 'book_21',
-    
+
     height: bookHeight,
     width: `calc(${bookHeight} * 0.5)`,
     coverThickness: '3px',
@@ -537,7 +537,7 @@ export const books = [
   },
   {
     id: 'book_22',
-    
+
     height: bookHeight,
     width: `calc(${bookHeight} * 0.5)`,
     coverThickness: '3px',
@@ -555,7 +555,7 @@ export const books = [
   },
   {
     id: 'book_23',
-    
+
     height: bookHeight,
     width: `calc(${bookHeight} * 0.5)`,
     coverThickness: '3px',
@@ -573,7 +573,7 @@ export const books = [
   },
   {
     id: 'book_24',
-    
+
     height: bookHeight,
     width: `calc(${bookHeight} * 0.5)`,
     coverThickness: '3px',
@@ -591,7 +591,7 @@ export const books = [
   },
   {
     id: 'sans_in_use',
-    
+
     height: bookHeight,
     width: `calc(${bookHeight} * 0.5)`,
     coverThickness: '3px',
@@ -609,7 +609,7 @@ export const books = [
   },
   {
     id: 'serif_in_use',
-    
+
     height: bookHeight,
     width: `calc(${bookHeight} * 0.5)`,
     coverThickness: '3px',

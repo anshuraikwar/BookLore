@@ -1,6 +1,8 @@
 "use client";
 
-import Book from "@/components/book/Book";
+import { useEffect, useState } from "react";
+
+import Book, {BookType} from "@/components/book/Book";
 import styles from "./page.module.css";
 
 import { books } from '../config/bookList';
@@ -14,28 +16,28 @@ import BookPages from '../../public/assets/img/pages.webp';
 import BookPagesVertical from '../../public/assets/img/pages_v.webp';
 
 export default function Home() {
+  const [shuffledBookList, setShuffledBookList] = useState<BookType[]>([]);
+
+  useEffect(() => {
+    const shuffledBooks: BookType[] = books.sort(() => Math.random() - 0.5);
+    setShuffledBookList(shuffledBooks);
+  }, []);
+
+  useEffect(() => {
+    console.log(shuffledBookList);
+  }, [shuffledBookList])
+
   const bookHeight = 'min(60vw, 60vh)';
 
   return (
     <div className={styles.bookshelf} id="bookshelf">
-      {books.map((book) => (
+      {shuffledBookList.map((book) => (
         <Book
-          bookId={book.id}
+          key={`book-${book.id}`}
 
-          bookWidth={book.width}
-          bookHeight={book.height}
-          bookCoverThickness={book.coverThickness}
-          bookThickness={book.thickness}
-          pagesOffset={book.pagesOffset}
-          insideCoverColor={book.insideCoverColor}
+          show3DPreview={false}
 
-          bookCoverFront={book.coverFront}
-          bookCoverSpine={book.coverSpine}
-          bookCoverBack={book.coverBack}
-          bookPage1={book.page1}
-          bookPage2={book.page2}
-          bookPages={book.pages}
-          bookPagesVertical={book.pagesVertical}
+          book={book}
         />
       ))}
       {/* <Book

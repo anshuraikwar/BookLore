@@ -15,6 +15,7 @@ import BookPage1 from '../../public/assets/img/atlantis/page_1.webp';
 import BookPage2 from '../../public/assets/img/atlantis/page_2.webp';
 import BookPages from '../../public/assets/img/pages.webp';
 import BookPagesVertical from '../../public/assets/img/pages_v.webp';
+import Link from "../../node_modules/next/link";
 
 export default function Home() {
   const [shuffledBookList, setShuffledBookList] = useState<BookType[]>([]);
@@ -24,41 +25,18 @@ export default function Home() {
     setShuffledBookList(shuffledBooks);
   }, []);
 
-  useEffect(() => {
-    console.log(shuffledBookList);
-  }, [shuffledBookList])
-
-  const bookHeight = 'min(60vw, 60vh)';
-
   return (
     <div className={styles.bookshelf} id="bookshelf">
       {shuffledBookList.map((book) => (
-        <Book
-          key={`book-${book.id}`}
+        <Link href={`/${book.id}`}>
+          <Book
+            key={`book-${book.id}`}
 
-          show3DPreview={false}
-
-          book={book}
-        />
+            show3DPreview={false}
+            book={book}
+          />
+        </Link>
       ))}
-      {/* <Book
-        bookId="static-atlantis"
-
-        bookHeight={bookHeight}
-        bookWidth={`calc(${bookHeight} * 0.5)`}
-        bookCoverThickness='3px'
-        bookThickness='min(10.8vw, 10.8vh)'
-        pagesOffset='3px'
-        insideCoverColor='#100F0D'
-
-        bookCoverFront={BookCoverFront.src}
-        bookCoverSpine={BookCoverSpine.src}
-        bookCoverBack={BookCoverBack.src}
-        bookPage1={BookPage1.src}
-        bookPage2={BookPage2.src}
-        bookPages={BookPages.src}
-        bookPagesVertical={BookPagesVertical.src}
-      /> */}
     </div>
   );
 }

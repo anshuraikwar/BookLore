@@ -5,7 +5,7 @@
 
 .book-details {
   /* min-height: 100vh; */
-  padding: 0 max(16px, 8vw);
+  padding: 0 max(16px, 8vw) 10vh;
 
   color: var(--color);
   background-color: #1E1E1E;
@@ -38,10 +38,11 @@
 
 .book-preview {
   width: 100%;
-  padding-top: 20vh;
+  padding-top: 35vh;
+  padding-left: 25%;
 
   display: flex;
-  justify-content: center;
+  justify-content: start;
 }
 
 .description-section {
@@ -188,6 +189,88 @@
 }
 
 .praise-section {
+  padding: 80px 0;
+
+  background: inherit;
+
   display: flex;
   flex-direction: column;
+  gap: 20px;
+
+  z-index: 2;
+}
+
+.praise-label {
+  font-family: Ivar Headline;
+  font-size: 1.2em;
+  font-style: italic;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+}
+
+.praise-label::before {
+  position: relative;
+  content: "";
+  width: 60px;
+  border-bottom: 1px solid;
+  height: 1px;
+  margin-right: 16px;
+}
+
+.praise-carousel {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4vw;
+}
+
+.praise-card {
+  page-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  break-inside: avoid;
+  margin-bottom: 40px;
+  padding-top: 40px;
+}
+
+.praise-quote {
+  margin-bottom: 24px;
+}
+
+.praise-quote::before {
+  content: "“";
+  font-family: Ivar Text;
+  font-size: 80px;
+  display: block;
+  margin-bottom: 0;
+  line-height: .22;
+}
+
+.praise-quote::after {
+  width: 40px;
+  background: var(--color);
+  opacity: .4;
+  height: 1px;
+  content: "";
+  display: block;
+  margin-top: 24px;
+}
+
+.praise-name {
+  line-height: 1.5;
+}
+
+.praise-role {
+  padding-right: 40px;
+  line-height: 1.5;
+  opacity: .5;
+}
+
+
+@media only screen and (max-width: 1024px) {
+
+  .praise-carousel {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
 }

@@ -37,14 +37,12 @@ export default function Book({
   const handleMouseEnter = () => {
     const card = document.getElementById(`${bookId}-card`);
     if (card) {
-      console.log(`${bookId}-card`);
       card.style.transform = `rotateX(-18deg) rotateY(90deg) translateY(12px)`;
     }
   }
   const handleMouseLeave = () => {
     const card = document.getElementById(`${bookId}-card`);
     if (card) {
-      console.log(`${bookId}-card`);
       card.style.transform = `rotateX(0deg) rotateY(90deg) translateY(0px)`;
     }
   }
@@ -71,7 +69,6 @@ export default function Book({
             handleMouseLeave();
           }
         }}
-        onClick={() => console.log(`${bookId}-card`)}
       >
         <div id={`${bookId}-card`} className="book-base" style={{
           width: bookWidth,
@@ -222,6 +219,15 @@ export default function Book({
           {show3DPreview && (
             <>
               <div className="first-page" style={{
+                top: pagesOffset,
+                bottom: pagesOffset,
+                right: pagesOffset,
+
+                backgroundImage: `url(${bookPage2})`,
+
+                transform: `translateZ(calc(${bookThickness} - ${bookCoverThickness} + 1px))`,
+              }} />
+              <div className="second-page" style={{
                 top: pagesOffset,
                 bottom: pagesOffset,
                 right: pagesOffset,

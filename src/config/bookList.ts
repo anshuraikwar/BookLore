@@ -190,8 +190,16 @@ import SerifInUseBookPage2 from '../../public/assets/img/serif_in_use/page_2.web
 import SerifInUseBookPages from '../../public/assets/img/pages_thick.webp';
 import SerifInUseBookPagesVertical from '../../public/assets/img/pages_v_thick.webp';
 
+import OdAndEdBookCoverFront from '../../public/assets/img/od_and_ed/cover_front.webp';
+import OdAndEdBookCoverSpine from '../../public/assets/img/od_and_ed/cover_spine.webp';
+import OdAndEdBookCoverBack from '../../public/assets/img/od_and_ed/cover_back.webp';
+import OdAndEdBookPage1 from '../../public/assets/img/od_and_ed/page_1.webp';
+import OdAndEdBookPage2 from '../../public/assets/img/od_and_ed/page_2.webp';
+import OdAndEdBookPages from '../../public/assets/img/pages_thick.webp';
+import OdAndEdBookPagesVertical from '../../public/assets/img/pages_v_thick.webp';
+
 // const bookHeight = 'min(60vw, 60vh)';
-const bookHeight = 'min(30vw, 30vh)';
+const bookHeight = 'min(25vw, 25vh)';
 
 export const books = [
   {
@@ -202,7 +210,7 @@ export const books = [
     coverThickness: '3px',
     thickness: `calc(${bookHeight} * 0.19)`,
     pagesOffset: '3px',
-    insideCoverColor: '#100F0D',
+    insideCoverColor: '#869F9B',
 
     coverFront: AtlantisBookCoverFront.src,
     coverSpine: AtlantisBookCoverSpine.src,
@@ -220,7 +228,7 @@ export const books = [
     coverThickness: '3px',
     thickness: `calc(${bookHeight} * 0.125)`,
     pagesOffset: '3px',
-    insideCoverColor: '#100F0D',
+    insideCoverColor: '#C9A760',
 
     coverFront: ElDirectorBookCoverFront.src,
     coverSpine: ElDirectorBookCoverSpine.src,
@@ -238,7 +246,7 @@ export const books = [
     coverThickness: '3px',
     thickness: `calc(${bookHeight} * 0.145)`,
     pagesOffset: '3px',
-    insideCoverColor: '#100F0D',
+    insideCoverColor: '#C6C5CA',
 
     coverFront: Fahrenheit451BookCoverFront.src,
     coverSpine: Fahrenheit451BookCoverSpine.src,
@@ -256,7 +264,7 @@ export const books = [
     coverThickness: '3px',
     thickness: `calc(${bookHeight} * 0.15)`,
     pagesOffset: '3px',
-    insideCoverColor: '#100F0D',
+    insideCoverColor: '#C9A411',
 
     coverFront: IsntLoveBookCoverFront.src,
     coverSpine: IsntLoveBookCoverSpine.src,
@@ -274,7 +282,7 @@ export const books = [
     coverThickness: '3px',
     thickness: `calc(${bookHeight} * 0.125)`,
     pagesOffset: '3px',
-    insideCoverColor: '#100F0D',
+    insideCoverColor: '#3F9952',
 
     coverFront: MerryFkinChristmasBookCoverFront.src,
     coverSpine: MerryFkinChristmasBookCoverSpine.src,
@@ -292,7 +300,7 @@ export const books = [
     coverThickness: '3px',
     thickness: `calc(${bookHeight} * 0.145)`,
     pagesOffset: '3px',
-    insideCoverColor: '#100F0D',
+    insideCoverColor: '#171716',
 
     coverFront: NewropiaBookCoverFront.src,
     coverSpine: NewropiaBookCoverSpine.src,
@@ -310,7 +318,7 @@ export const books = [
     coverThickness: '3px',
     thickness: `calc(${bookHeight} * 0.11)`,
     pagesOffset: '3px',
-    insideCoverColor: '#100F0D',
+    insideCoverColor: '#ADA69D',
 
     coverFront: PathBookCoverFront.src,
     coverSpine: PathBookCoverSpine.src,
@@ -328,7 +336,7 @@ export const books = [
     coverThickness: '3px',
     thickness: `calc(${bookHeight} * 0.17)`,
     pagesOffset: '3px',
-    insideCoverColor: '#100F0D',
+    insideCoverColor: '#202020',
 
     coverFront: UmbraBookCoverFront.src,
     coverSpine: UmbraBookCoverSpine.src,
@@ -338,6 +346,7 @@ export const books = [
     pages: UmbraBookPages.src,
     pagesVertical: UmbraBookPagesVertical.src,
   },
+  // untitled books
   {
     id: 'book_11',
 
@@ -346,7 +355,7 @@ export const books = [
     coverThickness: '3px',
     thickness: `calc(${bookHeight} * 0.12)`,
     pagesOffset: '3px',
-    insideCoverColor: '#100F0D',
+    insideCoverColor: '#295B74',
 
     coverFront: Book11CoverFront.src,
     coverSpine: Book11CoverSpine.src,
@@ -364,7 +373,7 @@ export const books = [
     coverThickness: '3px',
     thickness: `calc(${bookHeight} * 0.123)`,
     pagesOffset: '3px',
-    insideCoverColor: '#100F0D',
+    insideCoverColor: '#2F6587',
 
     coverFront: Book12CoverFront.src,
     coverSpine: Book12CoverSpine.src,
@@ -382,7 +391,7 @@ export const books = [
     coverThickness: '3px',
     thickness: `calc(${bookHeight} * 0.14)`,
     pagesOffset: '3px',
-    insideCoverColor: '#100F0D',
+    insideCoverColor: '#7F8AA0',
 
     coverFront: Book13CoverFront.src,
     coverSpine: Book13CoverSpine.src,
@@ -400,7 +409,7 @@ export const books = [
     coverThickness: '3px',
     thickness: `calc(${bookHeight} * 0.175)`,
     pagesOffset: '3px',
-    insideCoverColor: '#100F0D',
+    insideCoverColor: '#EDD8BD',
 
     coverFront: Book14CoverFront.src,
     coverSpine: Book14CoverSpine.src,
@@ -418,7 +427,7 @@ export const books = [
     coverThickness: '3px',
     thickness: `calc(${bookHeight} * 0.19)`,
     pagesOffset: '3px',
-    insideCoverColor: '#100F0D',
+    insideCoverColor: '#0860A7',
 
     coverFront: Book15CoverFront.src,
     coverSpine: Book15CoverSpine.src,
@@ -436,7 +445,7 @@ export const books = [
     coverThickness: '3px',
     thickness: `calc(${bookHeight} * 0.31)`,
     pagesOffset: '3px',
-    insideCoverColor: '#100F0D',
+    insideCoverColor: '#E8E1D0',
 
     coverFront: Book16CoverFront.src,
     coverSpine: Book16CoverSpine.src,
@@ -454,7 +463,7 @@ export const books = [
     coverThickness: '3px',
     thickness: `calc(${bookHeight} * 0.2)`,
     pagesOffset: '3px',
-    insideCoverColor: '#100F0D',
+    insideCoverColor: '#FFFFFF',
 
     coverFront: Book17CoverFront.src,
     coverSpine: Book17CoverSpine.src,
@@ -472,7 +481,7 @@ export const books = [
     coverThickness: '3px',
     thickness: `calc(${bookHeight} * 0.4)`,
     pagesOffset: '3px',
-    insideCoverColor: '#100F0D',
+    insideCoverColor: '#F6F1DB',
 
     coverFront: Book18CoverFront.src,
     coverSpine: Book18CoverSpine.src,
@@ -490,7 +499,7 @@ export const books = [
     coverThickness: '3px',
     thickness: `calc(${bookHeight} * 0.11)`,
     pagesOffset: '3px',
-    insideCoverColor: '#100F0D',
+    insideCoverColor: '#637689',
 
     coverFront: Book19CoverFront.src,
     coverSpine: Book19CoverSpine.src,
@@ -508,7 +517,7 @@ export const books = [
     coverThickness: '3px',
     thickness: `calc(${bookHeight} * 0.26)`,
     pagesOffset: '3px',
-    insideCoverColor: '#100F0D',
+    insideCoverColor: '#EBE3D0',
 
     coverFront: Book20CoverFront.src,
     coverSpine: Book20CoverSpine.src,
@@ -526,7 +535,7 @@ export const books = [
     coverThickness: '3px',
     thickness: `calc(${bookHeight} * 0.19)`,
     pagesOffset: '3px',
-    insideCoverColor: '#100F0D',
+    insideCoverColor: '#1E1E1E',
 
     coverFront: Book21CoverFront.src,
     coverSpine: Book21CoverSpine.src,
@@ -544,7 +553,7 @@ export const books = [
     coverThickness: '3px',
     thickness: `calc(${bookHeight} * 0.28)`,
     pagesOffset: '3px',
-    insideCoverColor: '#100F0D',
+    insideCoverColor: '#43535B',
 
     coverFront: Book22CoverFront.src,
     coverSpine: Book22CoverSpine.src,
@@ -562,7 +571,7 @@ export const books = [
     coverThickness: '3px',
     thickness: `calc(${bookHeight} * 0.16)`,
     pagesOffset: '3px',
-    insideCoverColor: '#100F0D',
+    insideCoverColor: '#F2F2F2',
 
     coverFront: Book23CoverFront.src,
     coverSpine: Book23CoverSpine.src,
@@ -580,7 +589,7 @@ export const books = [
     coverThickness: '3px',
     thickness: `calc(${bookHeight} * 0.28)`,
     pagesOffset: '3px',
-    insideCoverColor: '#100F0D',
+    insideCoverColor: '#E0E0E0',
 
     coverFront: Book24CoverFront.src,
     coverSpine: Book24CoverSpine.src,
@@ -598,7 +607,7 @@ export const books = [
     coverThickness: '3px',
     thickness: `calc(${bookHeight} * 0.232)`,
     pagesOffset: '3px',
-    insideCoverColor: '#100F0D',
+    insideCoverColor: '#B99F89',
 
     coverFront: SansInUseBookCoverFront.src,
     coverSpine: SansInUseBookCoverSpine.src,
@@ -616,7 +625,7 @@ export const books = [
     coverThickness: '3px',
     thickness: `calc(${bookHeight} * 0.232)`,
     pagesOffset: '3px',
-    insideCoverColor: '#100F0D',
+    insideCoverColor: '#D2EB47',
 
     coverFront: SerifInUseBookCoverFront.src,
     coverSpine: SerifInUseBookCoverSpine.src,
@@ -625,5 +634,23 @@ export const books = [
     page2: SerifInUseBookPage2.src,
     pages: SerifInUseBookPages.src,
     pagesVertical: SerifInUseBookPagesVertical.src,
+  },
+  {
+    id: 'od_and_ed',
+
+    height: bookHeight,
+    width: `calc(${bookHeight} * 0.66)`,
+    coverThickness: '3px',
+    thickness: `calc(${bookHeight} * 0.12)`,
+    pagesOffset: '3px',
+    insideCoverColor: '#616981',
+
+    coverFront: OdAndEdBookCoverFront.src,
+    coverSpine: OdAndEdBookCoverSpine.src,
+    coverBack: OdAndEdBookCoverBack.src,
+    page1: OdAndEdBookPage1.src,
+    page2: OdAndEdBookPage2.src,
+    pages: OdAndEdBookPages.src,
+    pagesVertical: OdAndEdBookPagesVertical.src,
   },
 ]

@@ -192,7 +192,7 @@
 
   /* background: var(--book-back-cover-image); */
   background-size: cover;
-  background-position-x: right;
+  background-position-x: left;
 }
 
 .book-cover.back .vertical.top .image-display {
@@ -376,13 +376,20 @@
   /* top: var(--pages-offset);
   bottom: var(--pages-offset);
   right: var(--pages-offset); */
-  left: 1px;
+  left: 0px;
   /* var(--book-cover-thickness); */
 
   /* background: var(--book-first-page); */
   background-size: cover;
 
   /* transform: translateZ(calc(var(--book-thickness) - var(--book-cover-thickness) + 0px)); */
+}
+
+.second-page {
+  position: absolute;
+  left: 0px;
+
+  background-size: cover;
 }
 
 .scroll-content {

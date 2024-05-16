@@ -2,7 +2,13 @@
   max-height: 100vh;
 
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  overflow: auto;
+}
 
-  /* overflow: auto; */
+.book-details-content {
+  max-width: 2000px;
+
+  display: flex;
+  flex-direction: column;
 }

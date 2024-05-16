@@ -7,12 +7,10 @@ import "./bookDetailsStyles.css";
 
 type BookDetailsPropType = {
   book: BookType,
-  bookIndex: number,
 };
 
 export default function BookDetails({
   book,
-  bookIndex,
 }: BookDetailsPropType) {
   useEffect(() => {
     const container = document.getElementById(`${book.id}-book-container`);
@@ -26,11 +24,10 @@ export default function BookDetails({
         const { top } = bookDetailsBounding;
 
         let OldValue = 0 - top;
-        if (bookIndex > 0) {
-          OldValue = OldValue + (window.innerHeight / 3);
-        }
+        // OldValue = OldValue + (window.innerHeight / 3);
 
-        const OldMax = bookDetails.clientHeight / 2;
+        let OldMax = bookDetails.clientHeight - window.innerHeight;
+        OldMax = 3 * OldMax / 4;
         var OldMin = 0;
         var OldRange = (OldMax - OldMin);
 
@@ -38,14 +35,14 @@ export default function BookDetails({
         if (OldValue > OldMax) OldValue = OldMax;
 
         var NewMin = 0;
-        var NewMax = 10;
+        var NewMax = 15;
         var NewRange = (NewMax - NewMin);
 
         var NewValue = (((OldValue - OldMin) * NewRange) / OldRange) + NewMin;
 
-        // if (container) {
-        //   container.style.paddingLeft = `${NewValue}%`;
-        // }
+        if (container) {
+          container.style.paddingLeft = `${NewValue}%`;
+        }
 
         OldMin = 0;
         OldRange = (OldMax - OldMin);
@@ -170,10 +167,35 @@ export default function BookDetails({
             </a>
           </div>
 
+
+          <div id={`praise-details-${book.id}`} className="praise-section">
+            <div className="praise-label">Praise</div>
+            <div id="praise-carousel" className="praise-carousel">
+              {[1, 2, 3, 4, 5, 6].map((praise) => (
+                <div className="praise-card" key={praise}>
+                  <blockquote className="praise-quote">
+                    <p>
+                      Charlie Munger was born before corporate speak, before business leaders minced words to obscure truths. But Charlie Munger’s words have always cut like a knife—and that sharp spirit of truth-seeking built Berkshire into what it is today. We should all aspire to such clarity.
+                    </p>
+                  </blockquote>
+                  <div className="praise-name">
+                    <p>
+                      Warren Buffett
+                    </p>
+                  </div>
+                  <div className="praise-role">
+                    <p>
+                      CEO of Berkshire Hathaway
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          </div>
         </div>
       </div>
-      <div id={`praise-details-${book.id}`} className="praise-section">
-      </div>
+      {/* praise */}
     </div>
   )
 }

@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import "./bookPageStyles.css";
 
 import { books } from '../../config/bookList';
 import BookDetails from "@/components/bookDetails/page";
+import { BookType } from "@/types/bookType";
 
 type BookPagePropType = {
   params: {
@@ -17,17 +19,26 @@ export default function BookPage({
     bookId,
   },
 }: BookPagePropType) {
-  const [finalBookId, setFinalBookId] = useState<string>("");
+  const router = useRouter();
+
+  const [book, setBook] = useState<BookType | null>(null);
 
   useEffect(() => {
-    setFinalBookId(bookId);
+    const foundBook = books.find((bk) => bk.id === bookId);
+    if (foundBook) {
+      setBook(foundBook);
+    } else {
+      router.replace("/");
+    }
   }, []);
 
   return (
     <div id='book-details-page' className="book-details-page">
-      {books.map((book, bookIndex) => (
-        <BookDetails key={book.id} book={book} bookIndex={bookIndex} />
-      ))}
+      <div id='book-details' className="book-details-content">
+        {book && (
+          <BookDetails book={book as BookType} />
+        )}
+      </div>
     </div>
   )
 }

@@ -206,9 +206,9 @@ export const books = [
     id: 'atlantis',
 
     height: bookHeight,
-    width: `calc(${bookHeight} * 0.66)`,
+    widthRatio: 0.66,
     coverThickness: '3px',
-    thickness: `calc(${bookHeight} * 0.19)`,
+    thicknessRatio: 0.19,
     pagesOffset: '3px',
     insideCoverColor: '#869F9B',
 
@@ -224,9 +224,9 @@ export const books = [
     id: 'el-director',
 
     height: bookHeight,
-    width: `calc(${bookHeight} * 0.64)`,
+    widthRatio: 0.64,
     coverThickness: '3px',
-    thickness: `calc(${bookHeight} * 0.125)`,
+    thicknessRatio: 0.125,
     pagesOffset: '3px',
     insideCoverColor: '#C9A760',
 
@@ -242,9 +242,9 @@ export const books = [
     id: 'farenheit-451',
 
     height: bookHeight,
-    width: `calc(${bookHeight} * 0.665)`,
+    widthRatio: 0.665,
     coverThickness: '3px',
-    thickness: `calc(${bookHeight} * 0.145)`,
+    thicknessRatio: 0.145,
     pagesOffset: '3px',
     insideCoverColor: '#C6C5CA',
 
@@ -260,9 +260,9 @@ export const books = [
     id: 'isnt-love',
 
     height: bookHeight,
-    width: `calc(${bookHeight} * 0.64)`,
+    widthRatio: 0.64,
     coverThickness: '3px',
-    thickness: `calc(${bookHeight} * 0.15)`,
+    thicknessRatio: 0.15,
     pagesOffset: '3px',
     insideCoverColor: '#C9A411',
 
@@ -278,9 +278,9 @@ export const books = [
     id: 'merry-fkin-christmas',
 
     height: bookHeight,
-    width: `calc(${bookHeight} * 0.635)`,
+    widthRatio: 0.635,
     coverThickness: '3px',
-    thickness: `calc(${bookHeight} * 0.125)`,
+    thicknessRatio: 0.125,
     pagesOffset: '3px',
     insideCoverColor: '#3F9952',
 
@@ -296,9 +296,9 @@ export const books = [
     id: 'newropia',
 
     height: bookHeight,
-    width: `calc(${bookHeight} * 0.66)`,
+    widthRatio: 0.66,
     coverThickness: '3px',
-    thickness: `calc(${bookHeight} * 0.145)`,
+    thicknessRatio: 0.145,
     pagesOffset: '3px',
     insideCoverColor: '#171716',
 
@@ -314,9 +314,9 @@ export const books = [
     id: 'path',
 
     height: bookHeight,
-    width: `calc(${bookHeight} * 0.64)`,
+    widthRatio: 0.64,
     coverThickness: '3px',
-    thickness: `calc(${bookHeight} * 0.11)`,
+    thicknessRatio: 0.11,
     pagesOffset: '3px',
     insideCoverColor: '#ADA69D',
 
@@ -332,9 +332,9 @@ export const books = [
     id: 'umbra',
 
     height: bookHeight,
-    width: `calc(${bookHeight} * 0.66)`,
+    widthRatio: 0.66,
     coverThickness: '3px',
-    thickness: `calc(${bookHeight} * 0.17)`,
+    thicknessRatio: 0.17,
     pagesOffset: '3px',
     insideCoverColor: '#202020',
 
@@ -347,13 +347,14 @@ export const books = [
     pagesVertical: UmbraBookPagesVertical.src,
   },
   // untitled books
+  // book_11
   {
     id: 'book_11',
 
     height: bookHeight,
-    width: `calc(${bookHeight} * 0.66)`,
+    widthRatio: 0.66,
     coverThickness: '3px',
-    thickness: `calc(${bookHeight} * 0.12)`,
+    thicknessRatio: 0.12,
     pagesOffset: '3px',
     insideCoverColor: '#295B74',
 
@@ -369,9 +370,9 @@ export const books = [
     id: 'book_12',
 
     height: bookHeight,
-    width: `calc(${bookHeight} * 0.7)`,
+    widthRatio: 0.7,
     coverThickness: '3px',
-    thickness: `calc(${bookHeight} * 0.123)`,
+    thicknessRatio: 0.123,
     pagesOffset: '3px',
     insideCoverColor: '#2F6587',
 
@@ -383,13 +384,14 @@ export const books = [
     pages: Book12Pages.src,
     pagesVertical: Book12PagesVertical.src,
   },
+  // cosmos
   {
-    id: 'book_13',
+    id: 'cosmos',
 
     height: bookHeight,
-    width: `calc(${bookHeight} * 0.835)`,
+    widthRatio: 0.835,
     coverThickness: '3px',
-    thickness: `calc(${bookHeight} * 0.14)`,
+    thicknessRatio: 0.14,
     pagesOffset: '3px',
     insideCoverColor: '#7F8AA0',
 
@@ -405,9 +407,9 @@ export const books = [
     id: 'book_14',
 
     height: bookHeight,
-    width: `calc(${bookHeight} * 0.57)`,
+    widthRatio: 0.57,
     coverThickness: '3px',
-    thickness: `calc(${bookHeight} * 0.175)`,
+    thicknessRatio: 0.175,
     pagesOffset: '3px',
     insideCoverColor: '#EDD8BD',
 
@@ -419,13 +421,14 @@ export const books = [
     pages: Book14Pages.src,
     pagesVertical: Book13PagesVertical.src,
   },
+  // book_15
   {
     id: 'book_15',
 
     height: bookHeight,
-    width: `calc(${bookHeight} * 0.645)`,
+    widthRatio: 0.645,
     coverThickness: '3px',
-    thickness: `calc(${bookHeight} * 0.19)`,
+    thicknessRatio: 0.19,
     pagesOffset: '3px',
     insideCoverColor: '#0860A7',
 
@@ -441,9 +444,9 @@ export const books = [
     id: 'book_16',
 
     height: bookHeight,
-    width: `calc(${bookHeight} * 0.67)`,
+    widthRatio: 0.67,
     coverThickness: '3px',
-    thickness: `calc(${bookHeight} * 0.31)`,
+    thicknessRatio: 0.31,
     pagesOffset: '3px',
     insideCoverColor: '#E8E1D0',
 
@@ -459,9 +462,9 @@ export const books = [
     id: 'book_17',
 
     height: bookHeight,
-    width: `calc(${bookHeight} * 0.73)`,
+    widthRatio: 0.73,
     coverThickness: '3px',
-    thickness: `calc(${bookHeight} * 0.2)`,
+    thicknessRatio: 0.2,
     pagesOffset: '3px',
     insideCoverColor: '#FFFFFF',
 
@@ -477,9 +480,9 @@ export const books = [
     id: 'book_18',
 
     height: bookHeight,
-    width: `calc(${bookHeight} * 0.62)`,
+    widthRatio: 0.62,
     coverThickness: '3px',
-    thickness: `calc(${bookHeight} * 0.4)`,
+    thicknessRatio: 0.4,
     pagesOffset: '3px',
     insideCoverColor: '#F6F1DB',
 
@@ -495,9 +498,9 @@ export const books = [
     id: 'book_19',
 
     height: bookHeight,
-    width: `calc(${bookHeight} * 0.82)`,
+    widthRatio: 0.82,
     coverThickness: '3px',
-    thickness: `calc(${bookHeight} * 0.11)`,
+    thicknessRatio: 0.11,
     pagesOffset: '3px',
     insideCoverColor: '#637689',
 
@@ -509,13 +512,14 @@ export const books = [
     pages: Book19Pages.src,
     pagesVertical: Book19PagesVertical.src,
   },
+  // book_20
   {
     id: 'book_20',
 
     height: bookHeight,
-    width: `calc(${bookHeight} * 1.015)`,
+    widthRatio: 1.015,
     coverThickness: '3px',
-    thickness: `calc(${bookHeight} * 0.26)`,
+    thicknessRatio: 0.26,
     pagesOffset: '3px',
     insideCoverColor: '#EBE3D0',
 
@@ -531,9 +535,9 @@ export const books = [
     id: 'book_21',
 
     height: bookHeight,
-    width: `calc(${bookHeight} * 0.624)`,
+    widthRatio: 0.624,
     coverThickness: '3px',
-    thickness: `calc(${bookHeight} * 0.19)`,
+    thicknessRatio: 0.19,
     pagesOffset: '3px',
     insideCoverColor: '#1E1E1E',
 
@@ -549,9 +553,9 @@ export const books = [
     id: 'book_22',
 
     height: bookHeight,
-    width: `calc(${bookHeight} * 0.71)`,
+    widthRatio: 0.71,
     coverThickness: '3px',
-    thickness: `calc(${bookHeight} * 0.28)`,
+    thicknessRatio: 0.28,
     pagesOffset: '3px',
     insideCoverColor: '#43535B',
 
@@ -567,9 +571,9 @@ export const books = [
     id: 'book_23',
 
     height: bookHeight,
-    width: `calc(${bookHeight} * 0.83)`,
+    widthRatio: 0.83,
     coverThickness: '3px',
-    thickness: `calc(${bookHeight} * 0.16)`,
+    thicknessRatio: 0.16,
     pagesOffset: '3px',
     insideCoverColor: '#F2F2F2',
 
@@ -585,9 +589,9 @@ export const books = [
     id: 'book_24',
 
     height: bookHeight,
-    width: `calc(${bookHeight} * 0.775)`,
+    widthRatio: 0.775,
     coverThickness: '3px',
-    thickness: `calc(${bookHeight} * 0.28)`,
+    thicknessRatio: 0.28,
     pagesOffset: '3px',
     insideCoverColor: '#E0E0E0',
 
@@ -603,9 +607,9 @@ export const books = [
     id: 'sans_in_use',
 
     height: bookHeight,
-    width: `calc(${bookHeight} * 0.72)`,
+    widthRatio: 0.72,
     coverThickness: '3px',
-    thickness: `calc(${bookHeight} * 0.232)`,
+    thicknessRatio: 0.232,
     pagesOffset: '3px',
     insideCoverColor: '#B99F89',
 
@@ -617,13 +621,14 @@ export const books = [
     pages: SansInUseBookPages.src,
     pagesVertical: SansInUseBookPagesVertical.src,
   },
+  // serif_in_use
   {
     id: 'serif_in_use',
 
     height: bookHeight,
-    width: `calc(${bookHeight} * 0.71)`,
+    widthRatio: 0.71,
     coverThickness: '3px',
-    thickness: `calc(${bookHeight} * 0.232)`,
+    thicknessRatio: 0.232,
     pagesOffset: '3px',
     insideCoverColor: '#D2EB47',
 
@@ -639,9 +644,9 @@ export const books = [
     id: 'od_and_ed',
 
     height: bookHeight,
-    width: `calc(${bookHeight} * 0.66)`,
+    widthRatio: 0.66,
     coverThickness: '3px',
-    thickness: `calc(${bookHeight} * 0.12)`,
+    thicknessRatio: 0.12,
     pagesOffset: '3px',
     insideCoverColor: '#616981',
 

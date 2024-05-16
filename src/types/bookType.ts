@@ -3,8 +3,10 @@ export type BookType = {
 
   height: string,
   width: string,
+  widthRatio: number,
   coverThickness: string,
   thickness: string,
+  thicknessRatio: number,
   pagesOffset: string,
   insideCoverColor: string,
 

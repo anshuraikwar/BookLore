@@ -1,21 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
-import Book from "@/components/book/Book";
-import { BookType } from "../types/bookType";
-import styles from "./page.module.css";
-
-import { books } from '../config/bookList';
-
-import BookCoverFront from '../../public/assets/img/atlantis/cover_front.webp';
-import BookCoverSpine from '../../public/assets/img/atlantis/cover_spine.webp';
-import BookCoverBack from '../../public/assets/img/atlantis/cover_back.webp';
-import BookPage1 from '../../public/assets/img/atlantis/page_1.webp';
-import BookPage2 from '../../public/assets/img/atlantis/page_2.webp';
-import BookPages from '../../public/assets/img/pages.webp';
-import BookPagesVertical from '../../public/assets/img/pages_v.webp';
 import Link from "../../node_modules/next/link";
+
+import styles from "./page.module.css";
+import { BookType } from "../types/bookType";
+import { books } from '../config/bookList';
+import Book from "@/components/book/Book";
+
 
 export default function Home() {
   const [shuffledBookList, setShuffledBookList] = useState<BookType[]>([]);
@@ -33,7 +25,7 @@ export default function Home() {
             key={`book-${book.id}`}
 
             show3DPreview={false}
-            book={book}
+            book={{ ...book, height: 'min(60vw, 60vh)' }}
           />
         </Link>
       ))}

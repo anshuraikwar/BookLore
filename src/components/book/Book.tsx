@@ -19,9 +19,9 @@ export default function Book({
     id: bookId,
 
     height: bookHeight,
-    width: bookWidth,
+    widthRatio,
     coverThickness: bookCoverThickness,
-    thickness: bookThickness,
+    thicknessRatio,
     pagesOffset,
     insideCoverColor,
 
@@ -33,6 +33,9 @@ export default function Book({
     pages: bookPages,
     pagesVertical: bookPagesVertical,
   } = book;
+
+  const bookWidth = `calc(${bookHeight} * ${widthRatio})`;
+  const bookThickness = `calc(${bookHeight} * ${thicknessRatio})`;
 
   const handleMouseEnter = () => {
     const card = document.getElementById(`${bookId}-card`);
@@ -71,8 +74,8 @@ export default function Book({
         }}
       >
         <div id={`${bookId}-card`} className="book-base" style={{
-          width: bookWidth,
           height: bookHeight,
+          width: bookWidth,
 
           transform: show3DPreview
             ? 'rotateX(55deg) rotateZ(-35deg)'

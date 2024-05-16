@@ -178,6 +178,9 @@ export const books = [
     page2: AtlantisBookPage2.src,
     pages: BookPages3.src,
     pagesVertical: BookPages3Vertical.src,
+
+    title: 'Atlantis',
+    author: 'Josep Lorman',
   },
   {
     id: 'el-director',
@@ -196,6 +199,9 @@ export const books = [
     page2: ElDirectorBookPage2.src,
     pages: BookPages.src,
     pagesVertical: BookPagesVertical.src,
+
+    title: 'El Director',
+    author: 'David Jimenez',
   },
   {
     id: 'farenheit-451',
@@ -214,6 +220,9 @@ export const books = [
     page2: Fahrenheit451BookPage2.src,
     pages: BookPages3.src,
     pagesVertical: BookPages3Vertical.src,
+
+    title: 'Fahrenheit 451',
+    author: 'Ray Bradbury',
   },
   {
     id: 'isnt-love',
@@ -232,6 +241,9 @@ export const books = [
     page2: IsntLoveBookPage2.src,
     pages: BookPages3.src,
     pagesVertical: BookPages3Vertical.src,
+
+    title: 'Isn\'t Love',
+    author: 'Levi Washington',
   },
   {
     id: 'merry-fkin-christmas',
@@ -250,6 +262,9 @@ export const books = [
     page2: MerryFkinChristmasBookPage2.src,
     pages: BookPages.src,
     pagesVertical: BookPagesVertical.src,
+
+    title: 'Merry Fucking Christmas',
+    author: 'Joe Movick',
   },
   {
     id: 'newropia',
@@ -268,6 +283,9 @@ export const books = [
     page2: NewropiaBookPage2.src,
     pages: BookPages.src,
     pagesVertical: BookPagesVertical.src,
+
+    title: 'Newropia',
+    author: 'Sophia Rhei',
   },
   {
     id: 'path',
@@ -286,6 +304,9 @@ export const books = [
     page2: PathBookPage2.src,
     pages: BookPages.src,
     pagesVertical: BookPagesVertical.src,
+
+    title: 'Path',
+    author: 'J.E Chadwick',
   },
   {
     id: 'umbra',
@@ -304,6 +325,9 @@ export const books = [
     page2: UmbraBookPage2.src,
     pages: BookPages3.src,
     pagesVertical: BookPages3Vertical.src,
+
+    title: 'Umbra',
+    author: 'Yana Barbelo',
   },
   // untitled books
   // book_11
@@ -324,6 +348,9 @@ export const books = [
     page2: Book11Page2.src,
     pages: BookPages.src,
     pagesVertical: BookPagesVertical.src,
+
+    title: 'Lorem ipsum dolor sit amet: consectetur adipiscing elit.',
+    author: 'Lorem Ipsum Dolor',
   },
   {
     id: 'book_12',
@@ -342,6 +369,9 @@ export const books = [
     page2: Book12Page2.src,
     pages: BookPages.src,
     pagesVertical: BookPagesVertical.src,
+
+    title: 'Lorem ipsum dolor sit amet: consectetur adipiscing elit.',
+    author: 'Lorem Ipsum Dolor',
   },
   // cosmos
   {
@@ -361,6 +391,9 @@ export const books = [
     page2: Book13Page2.src,
     pages: BookPages.src,
     pagesVertical: BookPagesVertical.src,
+
+    title: 'Cosmos',
+    author: 'Lorem ipsum dolor',
   },
   {
     id: 'book_14',
@@ -379,6 +412,9 @@ export const books = [
     page2: Book14Page2.src,
     pages: BookPages.src,
     pagesVertical: BookPagesVertical.src,
+
+    title: 'Lorem ipsum dolor sit amet: consectetur adipiscing elit.',
+    author: 'Lorem Ipsum Dolor',
   },
   // book_15
   {
@@ -398,6 +434,9 @@ export const books = [
     page2: Book15Page2.src,
     pages: BookPages3.src,
     pagesVertical: BookPages3Vertical.src,
+
+    title: 'Lorem ipsum dolor sit amet: consectetur adipiscing elit.',
+    author: 'Lorem Ipsum Dolor',
   },
   {
     id: 'book_16',
@@ -434,6 +473,9 @@ export const books = [
     page2: Book17Page2.src,
     pages: BookPages.src,
     pagesVertical: BookPagesVertical.src,
+
+    title: 'Lorem ipsum dolor sit amet: consectetur adipiscing elit.',
+    author: 'Lorem Ipsum Dolor',
   },
   {
     id: 'book_18',
@@ -470,6 +512,9 @@ export const books = [
     page2: Book19Page2.src,
     pages: BookPages3.src,
     pagesVertical: BookPages3Vertical.src,
+
+    title: 'Lorem ipsum dolor sit amet: consectetur adipiscing elit.',
+    author: 'Lorem Ipsum Dolor',
   },
   // book_20
   {
@@ -507,6 +552,9 @@ export const books = [
     page2: Book21Page2.src,
     pages: BookPages3.src,
     pagesVertical: BookPages3Vertical.src,
+
+    title: 'Lorem ipsum dolor sit amet: consectetur adipiscing elit.',
+    author: 'Lorem Ipsum Dolor',
   },
   {
     id: 'book_22',
@@ -525,6 +573,9 @@ export const books = [
     page2: Book22Page2.src,
     pages: BookPages2.src,
     pagesVertical: BookPages2Vertical.src,
+
+    title: 'Lorem ipsum dolor sit amet: consectetur adipiscing elit.',
+    author: 'Lorem Ipsum Dolor',
   },
   {
     id: 'book_23',
@@ -543,6 +594,9 @@ export const books = [
     page2: Book23Page2.src,
     pages: BookPages.src,
     pagesVertical: BookPagesVertical.src,
+
+    title: 'Lorem ipsum dolor sit amet: consectetur adipiscing elit.',
+    author: 'Lorem Ipsum Dolor',
   },
   {
     id: 'book_24',
@@ -561,6 +615,9 @@ export const books = [
     page2: Book24Page2.src,
     pages: BookPages2.src,
     pagesVertical: BookPages2Vertical.src,
+
+    title: 'Lorem ipsum dolor sit amet: consectetur adipiscing elit.',
+    author: 'Lorem Ipsum Dolor',
   },
   {
     id: 'sans_in_use',
@@ -579,6 +636,9 @@ export const books = [
     page2: SansInUseBookPage2.src,
     pages: BookPages2.src,
     pagesVertical: BookPages2Vertical.src,
+
+    title: 'Sans In Use',
+    author: 'Lorem Ipsum Dolor',
   },
   // serif_in_use
   {
@@ -598,6 +658,9 @@ export const books = [
     page2: SerifInUseBookPage2.src,
     pages: BookPages2.src,
     pagesVertical: BookPages2Vertical.src,
+
+    title: 'Serif In Use',
+    author: 'Lorem Ipsum Dolor',
   },
   {
     id: 'od_and_ed',
@@ -616,5 +679,8 @@ export const books = [
     page2: OdAndEdBookPage2.src,
     pages: BookPages2.src,
     pagesVertical: BookPages2Vertical.src,
+
+    title: 'Od & Ed',
+    author: 'Shanti Leonard',
   },
 ]

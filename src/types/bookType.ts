@@ -15,4 +15,7 @@ export type BookType = {
   page2: string,
   pages: string,
   pagesVertical: string,
+
+  title: string,
+  author: string,
 }

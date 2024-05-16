@@ -12,13 +12,46 @@ type BookDetailsPropType = {
 export default function BookDetails({
   book,
 }: BookDetailsPropType) {
+  const praises = [
+    {
+      quote: 'Lorem ipsum dolor sit amet, Aliquam erat volutpat. Proin accumsan pellentesque urna quis rutrum. Cras nec accumsan massa. Nunc pellentesque massa ut lacus tincidunt, non gravida velit pulvinar.',
+      name: 'Lorem ipsum dolor',
+      role: 'Lorem ipsum dolor sit amet',
+    },
+    {
+      quote: 'Lorem ipsum dolor sit amet, Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.',
+      name: 'Lorem ipsum dolor',
+      role: 'Lorem ipsum dolor sit amet',
+    },
+    {
+      quote: 'Lorem ipsum dolor sit amet, Nam sollicitudin gravida lacus, quis tincidunt sapien. In ut sem quis nisl venenatis efficitur. Nulla facilisi. Aenean hendrerit sapien ac purus aliquam molestie.',
+      name: 'Lorem ipsum dolor',
+      role: 'Lorem ipsum dolor sit amet',
+    },
+    {
+      quote: 'Lorem ipsum dolor sit amet, Vivamus ligula risus, suscipit sed ornare eget, sollicitudin sed erat. Phasellus ultrices augue lobortis nulla varius, at ultrices sapien maximus.',
+      name: 'Lorem ipsum dolor',
+      role: 'Lorem ipsum dolor sit amet',
+    },
+    {
+      quote: 'Lorem ipsum dolor sit amet, Quisque tincidunt felis sed justo condimentum auctor volutpat in neque. Integer egestas lorem at dui luctus, sed facilisis metus pellentesque.',
+      name: 'Lorem ipsum dolor',
+      role: 'Lorem ipsum dolor sit amet',
+    },
+    {
+      quote: 'Lorem ipsum dolor sit amet, Nunc ac augue at dolor pellentesque vestibulum pharetra sed purus. Vestibulum rutrum aliquet egestas. Integer sapien massa, fermentum et malesuada sit amet, blandit quis nibh.',
+      name: 'Lorem ipsum dolor',
+      role: 'Lorem ipsum dolor sit amet',
+    },
+  ];
+
   useEffect(() => {
     const container = document.getElementById(`${book.id}-book-container`);
     const card = document.getElementById(`${book.id}-card`);
     const bookDetails = document.getElementById(`book-details-${book.id}`);
     const bookFrontCover = document.getElementById(`${book.id}-cover-front`);
 
-    window?.addEventListener("scroll", () => {
+    const handleScroll = () => {
       if (bookDetails) {
         const bookDetailsBounding = bookDetails.getBoundingClientRect();
         const { top } = bookDetailsBounding;
@@ -83,11 +116,13 @@ export default function BookDetails({
           bookFrontCover.style.transform = `rotateY(-${NewValue}deg)`;
         }
       }
-    }, true)
+    }
 
-    // return(() => {
-    //   page?.removeEventListener()
-    // })
+    window?.addEventListener("scroll", handleScroll, true)
+
+    return (() => {
+      window.removeEventListener("scroll", handleScroll);
+    });
   }, []);
 
   return (
@@ -104,14 +139,24 @@ export default function BookDetails({
         <div id={`${book.id}-preview`} className="preview-section" />
         <div id={`${book.id}-description`} className="description-section">
           <div id={`${book.id}-book-title`} className="title">
-            Poor Charlie’s Almanack: The Essential Wit and Wisdom of Charles T. Munger
+            {book.title}
           </div>
           <div id={`${book.id}-book-author`} className="author">
-            Edited by Peter D. Kaufman
+            Edited by {book.author}
           </div>
           <div id={`${book.id}-book-summary`} className="summary">
             <p>
-              “Spend each day trying to be a little wiser than you were when you woke up,” Charlie Munger advises in Poor Charlie’s Almanack. Originally published in 2005, this compilation of 11 talks by the legendary Berkshire Hathaway vice-chairman has become a touchstone for a generation of investors and entrepreneurs. Delivered with Munger’s characteristic rhetorical flair, Poor Charlie’s Almanack draws on his encyclopedic knowledge of business, finance, history, philosophy, physics, and ethics to introduce the latticework of mental models that underpin his rational and rigorous approach to life, learning, and decision-making. It is an essential volume for any reader seeking to go to bed a little wiser than when they woke up. This abridged edition features a new foreword by Stripe cofounder and president John Collison.
+              “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur auctor
+              rhoncus purus id lacinia. Etiam non accumsan elit. Aenean pretium augue vitae
+              mollis fringilla. Cras ut interdum orci. Etiam at lacinia urna, quis
+              condimentum metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse et tellus luctus, ullamcorper nisi vitae, porttitor ante.
+              Aliquam feugiat vestibulum nisi. Nulla volutpat luctus sagittis.
+              <br />
+              <br />
+              Aliquam vel enim et nisl aliquet convallis at sit amet justo. Pellentesque
+              habitant morbi tristique senectus et netus et malesuada fames ac turpis
+              egestas. Mauris in orci mollis, mollis nibh vitae, feugiat purus.
             </p>
           </div>
 
@@ -154,9 +199,20 @@ export default function BookDetails({
             </div>
             <div id={`${book.id}-author-bio`} className="author-bio">
               <p>
-                Charles T. Munger (1924–2023) was an investor, businessman, and former real estate attorney. He was the vice-chairman of Berkshire Hathaway, the multinational conglomerate controlled by Warren Buffett. He was chairman of Wesco Financial Corporation from 1984 to 2011. He was also chairman of the Daily Journal Corporation and a director of Costco Wholesale Corporation.
-
-                Peter D. Kaufman is the chairman and CEO of Glenair, Inc. He was a longtime director of Wesco Financial Corporation and is a former director of Daily Journal Corporation. In 2005, he edited and published Poor Charlie’s Almanack, a compilation of talks given by his longtime friend Charlie Munger.
+                Lorem ipsum dolor sit amet, Integer dictum et metus nec dignissim. Duis sed lectus
+                sollicitudin, euismod nisi et, bibendum lacus. Etiam lorem diam, malesuada non
+                consectetur a, viverra vitae neque. Sed quis ligula et felis viverra auctor.
+                Nullam sagittis rhoncus dolor id feugiat. Nullam urna sapien, posuere et
+                facilisis sed, fermentum eu nunc. Suspendisse nibh enim, pretium in nulla
+                sed, tincidunt tincidunt mi.
+                <br />
+                <br />
+                Quisque venenatis tincidunt mattis. Pellentesque eget porttitor leo. Ut lobortis,
+                nulla dignissim vehicula lobortis, ex eros dictum enim, sit amet sollicitudin
+                massa ante nec nunc. Aenean finibus mauris vitae diam tempor aliquet. Integer
+                porta arcu vitae nisl tincidunt, in facilisis arcu sollicitudin. Suspendisse
+                sit amet neque diam. Proin tortor erat, interdum et faucibus quis, aliquet
+                eget felis.
               </p>
             </div>
           </div>
@@ -171,21 +227,21 @@ export default function BookDetails({
           <div id={`praise-details-${book.id}`} className="praise-section">
             <div className="praise-label">Praise</div>
             <div id="praise-carousel" className="praise-carousel">
-              {[1, 2, 3, 4, 5, 6].map((praise) => (
-                <div className="praise-card" key={praise}>
+              {praises.map((praise, praiseIndex) => (
+                <div className="praise-card" key={praiseIndex}>
                   <blockquote className="praise-quote">
                     <p>
-                      Charlie Munger was born before corporate speak, before business leaders minced words to obscure truths. But Charlie Munger’s words have always cut like a knife—and that sharp spirit of truth-seeking built Berkshire into what it is today. We should all aspire to such clarity.
+                      {praise.quote}
                     </p>
                   </blockquote>
                   <div className="praise-name">
                     <p>
-                      Warren Buffett
+                      {praise.name}
                     </p>
                   </div>
                   <div className="praise-role">
                     <p>
-                      CEO of Berkshire Hathaway
+                      {praise.role}
                     </p>
                   </div>
                 </div>

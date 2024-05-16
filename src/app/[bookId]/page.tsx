@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import "./bookPageStyles.css";
 
 import { books } from '../../config/bookList';
-import BookDetails from "@/components/bookDetails/page";
+import BookDetails from "@/components/bookDetails/bookDetails";
 import { BookType } from "@/types/bookType";
 
 type BookPagePropType = {

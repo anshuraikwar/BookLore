@@ -13,7 +13,8 @@ export default function Home() {
   const [shuffledBookList, setShuffledBookList] = useState<BookType[]>([]);
 
   useEffect(() => {
-    const shuffledBooks: BookType[] = books.sort(() => Math.random() - 0.5);
+    const shuffledBooks: BookType[] = books;
+    // .sort(() => Math.random() - 0.5);
     setShuffledBookList(shuffledBooks);
   }, []);
 

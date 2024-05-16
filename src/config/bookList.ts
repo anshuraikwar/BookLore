@@ -203,7 +203,7 @@ export const books = [
     height: bookHeight,
     widthRatio: 0.665,
     coverThickness: '3px',
-    thicknessRatio: 0.145,
+    thicknessRatio: 0.13,
     pagesOffset: '3px',
     insideCoverColor: '#C6C5CA',
 

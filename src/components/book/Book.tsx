@@ -40,7 +40,7 @@ export default function Book({
   const handleMouseEnter = () => {
     const card = document.getElementById(`${bookId}-card`);
     if (card) {
-      card.style.transform = `rotateX(-18deg) rotateY(90deg) translateY(12px)`;
+      card.style.transform = `rotateX(-10deg) rotateY(90deg) translateY(12px)`;
     }
   }
   const handleMouseLeave = () => {

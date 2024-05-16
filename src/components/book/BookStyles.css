@@ -129,7 +129,7 @@
 
   /* background: var(--book-front-cover-image); */
   background-size: cover;
-  background-position-x: right;
+  background-position-x: left;
 }
 
 .book-cover.front .horizontal.right .image-display {

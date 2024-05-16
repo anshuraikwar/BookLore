@@ -14,29 +14,24 @@ export default function BookDetails({
   book,
   bookIndex,
 }: BookDetailsPropType) {
-
   useEffect(() => {
-    const page = document.getElementById("book-details-page");
     const container = document.getElementById(`${book.id}-book-container`);
     const card = document.getElementById(`${book.id}-card`);
     const bookDetails = document.getElementById(`book-details-${book.id}`);
     const bookFrontCover = document.getElementById(`${book.id}-cover-front`);
 
-    page?.addEventListener("scroll", () => {
+    window?.addEventListener("scroll", () => {
       if (bookDetails) {
         const bookDetailsBounding = bookDetails.getBoundingClientRect();
         const { top } = bookDetailsBounding;
 
         let OldValue = 0 - top;
         if (bookIndex > 0) {
-          OldValue = OldValue + (window.innerHeight / 2);
+          OldValue = OldValue + (window.innerHeight / 3);
         }
-        // let OldValue = Math.abs(top);
 
-        const OldMax = bookDetails.clientHeight;
-        // const OldMax = bookDetails.clientHeight - window.innerHeight;
+        const OldMax = bookDetails.clientHeight / 2;
         var OldMin = 0;
-        // var OldMin = OldMax / 2;
         var OldRange = (OldMax - OldMin);
 
         if (OldValue < OldMin) OldValue = OldMin;
@@ -48,9 +43,9 @@ export default function BookDetails({
 
         var NewValue = (((OldValue - OldMin) * NewRange) / OldRange) + NewMin;
 
-        if (container) {
-          container.style.paddingLeft = `${NewValue}%`;
-        }
+        // if (container) {
+        //   container.style.paddingLeft = `${NewValue}%`;
+        // }
 
         OldMin = 0;
         OldRange = (OldMax - OldMin);
@@ -78,7 +73,6 @@ export default function BookDetails({
         NewRotateY = 0 - NewRotateY;
 
         if (card) {
-          // card.style.transform = `rotateX(${NewRotateX}deg) rotateZ(${NewRotateZ}deg)`;
           card.style.transform = `rotateY(${NewRotateY}deg) rotateX(${NewRotateX}deg) rotateZ(${NewRotateZ}deg)`;
         }
 
@@ -92,7 +86,7 @@ export default function BookDetails({
           bookFrontCover.style.transform = `rotateY(-${NewValue}deg)`;
         }
       }
-    })
+    }, true)
 
     // return(() => {
     //   page?.removeEventListener()
@@ -101,12 +95,16 @@ export default function BookDetails({
 
   return (
     <div id={`book-details-${book.id}`} className="book-details">
-      <div id={`${book.id}-details`} className="details-section">
+      <div id={`${book.id}-details`} className="details-section absolute-poistioned">
         <div id={`${book.id}-preview`} className="preview-section">
           <div className="book-preview">
             <Book book={book} show3DPreview={true} />
           </div>
         </div>
+      </div>
+
+      <div id={`${book.id}-details`} className="details-section">
+        <div id={`${book.id}-preview`} className="preview-section" />
         <div id={`${book.id}-description`} className="description-section">
           <div id={`${book.id}-book-title`} className="title">
             Poor Charlie’s Almanack: The Essential Wit and Wisdom of Charles T. Munger
@@ -121,6 +119,26 @@ export default function BookDetails({
           </div>
 
           <div id={`${book.id}-buy-options`} className="buy-options">
+            <a>
+              <div>
+                <p>Purchase on Stripe $30</p>
+              </div>
+              <div className="buy-icon">
+                <div>
+                  icon
+                </div>
+              </div>
+            </a>
+            <a>
+              <div>
+                <p>Purchase on Stripe $30</p>
+              </div>
+              <div className="buy-icon">
+                <div>
+                  icon
+                </div>
+              </div>
+            </a>
             <a>
               <div>
                 <p>Purchase on Stripe $30</p>

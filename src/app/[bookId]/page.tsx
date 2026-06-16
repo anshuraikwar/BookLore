@@ -1,12 +1,9 @@
-"use client";
+import { redirect } from 'next/navigation'
 
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import "./bookPageStyles.css";
-
+import { BookType } from "@/types/bookType";
 import { books } from '../../config/bookList';
 import BookDetails from "@/components/bookDetails/bookDetails";
-import { BookType } from "@/types/bookType";
 
 type BookPagePropType = {
   params: {
@@ -19,24 +16,17 @@ export default function BookPage({
     bookId,
   },
 }: BookPagePropType) {
-  const router = useRouter();
+  const foundBook = books.find((bk) => bk.id === bookId);
 
-  const [book, setBook] = useState<BookType | null>(null);
-
-  useEffect(() => {
-    const foundBook = books.find((bk) => bk.id === bookId);
-    if (foundBook) {
-      setBook(foundBook);
-    } else {
-      router.replace("/");
-    }
-  }, []);
+  if (!foundBook) {
+    redirect('/') // Triggers an immediate server-side redirect
+  }
 
   return (
     <div id='book-details-page' className="book-details-page">
       <div id='book-details' className="book-details-content">
-        {book && (
-          <BookDetails book={book as BookType} />
+        {foundBook && (
+          <BookDetails book={foundBook as BookType} />
         )}
       </div>
     </div>

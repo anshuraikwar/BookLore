@@ -1,0 +1,278 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.book-base {
+  flex-shrink: 0;
+
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: left;
+  transition: transform 0.3s linear;
+}
+
+.book-cover {
+  position: absolute;
+
+  transform-style: preserve-3d;
+}
+
+.position-relative {
+  height: 100%;
+  width: 100%;
+
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.pane.top {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.book-cover.front {
+  left: 0;
+}
+
+.book-cover.front .position-relative {
+  transform: rotateY(0deg);
+  transform-origin: left;
+}
+
+.book-cover.front .cover-display {
+  height: 100%;
+  width: 100%;
+
+  background-size: cover;
+}
+
+.book-cover.front .horizontal.left .image-display {
+  height: 100%;
+  width: 100%;
+
+  background-size: cover;
+  background-position-x: right;
+}
+
+.book-cover.front .horizontal.right .image-display {
+  height: 100%;
+  width: 100%;
+
+  background-size: cover;
+  background-position-x: right;
+}
+
+.book-cover.front .vertical.top .image-display {
+  height: 100%;
+  width: 100%;
+
+  background: cover;
+  background-position-y: top;
+}
+
+.book-cover.front .vertical.bottom .image-display {
+  height: 100%;
+  width: 100%;
+
+  background-size: cover;
+  background-position-y: bottom;
+}
+
+.book-cover.front .inside.image-display {
+  height: 100%;
+  width: 100%;
+
+  background-size: cover;
+
+  transform: rotateY(180deg);
+}
+
+.book-cover.back .cover-display {
+  height: 100%;
+  width: 100%;
+
+  background-size: cover;
+
+  transform: rotateY(180deg) translateZ(0.1px);
+}
+
+.book-cover.back .pane.top .inside.image-display {
+  height: 100%;
+  width: 100%;
+}
+
+.book-cover.back .horizontal.right .image-display {
+  height: 100%;
+  width: 100%;
+
+  background-size: cover;
+  background-position-x: left;
+}
+
+.book-cover.back .vertical.top .image-display {
+  height: 100%;
+  width: 100%;
+
+  background-size: cover;
+  background-position-y: top;
+
+  transform: rotateY(180deg);
+}
+
+.book-cover.back .vertical.bottom .image-display {
+  height: 100%;
+  width: 100%;
+
+  background-size: cover;
+  background-position-y: bottom;
+
+  transform: rotateY(180deg);
+}
+
+.sides {
+  position: absolute;
+}
+
+.sides.horizontal {
+  top: 0;
+  bottom: 0;
+}
+
+.sides.left {
+  left: 0;
+
+  transform: rotateY(-90deg);
+  transform-origin: left;
+}
+
+.sides.right {
+  right: 0;
+
+  transform: rotateY(90deg);
+  transform-origin: right;
+}
+
+.sides.vertical {
+  left: 0;
+  right: 0;
+}
+
+.sides.top {
+  top: 0;
+
+  transform: rotateX(90deg);
+  transform-origin: top;
+}
+
+.sides.bottom {
+  bottom: 0;
+
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+}
+
+.spine {
+  position: absolute;
+
+  transform: rotateY(-90deg);
+  transform-origin: left;
+  transform-style: preserve-3d;
+}
+
+.spine .inside.image-display {
+  height: 100%;
+  width: 100%;
+
+  background-size: cover;
+
+  transform: rotateY(180deg);
+}
+
+.spine .pane.top .cover-display {
+  height: 100%;
+  width: calc(100% + 3px);
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.spine .horizontal.right {
+  background-size: cover;
+  background-position-y: left;
+}
+
+.spine .vertical.top {
+  background-size: cover;
+  background-position-y: top;
+}
+
+.spine .vertical.bottom {
+  background-size: cover;
+  background-position-y: bottom;
+}
+
+.pages {
+  position: absolute;
+
+  background-size: cover;
+
+  transform-style: preserve-3d;
+}
+
+.pages.bottom {
+  border-radius: 2px 0 0 2px;
+
+  transform-origin: bottom;
+}
+
+.pages.top {
+  border-radius: 2px 0 0 2px;
+
+  transform-origin: top;
+}
+
+.pages.right {
+  transform-origin: right;
+}
+
+.pages.right>div.image-display {
+  background-size: cover;
+
+  transform-origin: left;
+}
+
+.first-page {
+  position: absolute;
+  left: 0px;
+
+  background-size: cover;
+}
+
+.second-page {
+  position: absolute;
+  left: 0px;
+
+  background-size: cover;
+}
+
+.scroll-content {
+  width: 100%;
+  height: 200vh;
+
+  position: relative;
+  z-index: 2;
+}

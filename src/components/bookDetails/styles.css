@@ -1,11 +1,15 @@
 :root {
   --color: ghostwhite;
-  --backgroundColor: red;
+}
+
+.book-details-page {
+  background-color: #1E1E1E;
 }
 
 .book-details {
+  --padding-top: 10vh;
   /* min-height: 100vh; */
-  padding: 0 max(16px, 8vw) 10vh;
+  padding: var(--padding-top) max(16px, 8vw) 10vh;
 
   color: var(--color);
   background-color: #1E1E1E;
@@ -16,13 +20,34 @@
   position: relative;
 }
 
+.back-button-wrapper {
+  position: sticky;
+  top: var(--padding-top);
+  z-index: 10;
+}
+
+.back-button {
+  height: 40px;
+  width: 40px;
+  padding: 8px;
+  border-radius: 50%;
+
+  background-color: #1E1E1E;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+}
+
 .details-section {
   display: flex;
 }
 
 .details-section.absolute-poistioned {
   position: sticky;
-  top: 0;
+  top: var(--padding-top);
 
   width: 100%;
   height: 0;
@@ -32,8 +57,24 @@
   flex-shrink: 0;
   width: 58%;
 
+  display: none;
+  justify-content: center;
+}
+
+.preview-section .book-preview .container {
+  padding-left: 30%;
+}
+
+.mobile-preview-section {
+  height: min(25vw, 25vh);
+  min-height: 200px;
+  width: 50vw;
+  padding-right: 20vw;
+  padding-top: 6vh;
+  padding-bottom: 6vh;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .book-preview {
@@ -45,26 +86,39 @@
   justify-content: start;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.header-title-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .description-section {
-  flex-shrink: 0;
-  width: 42%;
-  padding-top: 20vh;
+  /* flex-shrink: 0;
+  width: 42%; */
+  /* padding-top: 10vh; */
 
   display: flex;
   flex-direction: column;
 }
 
 .title {
-  font-size: calc(16px + 1vw);
+  font-size: calc(20px);
   line-height: 1.4;
   font-weight: 700;
 }
 
 .author {
-  margin-top: 12px;
+  margin-top: 4px;
 
   font-family: Ivar Display;
-  font-size: 21px;
+  font-size: 16px;
   font-weight: 500;
   font-style: italic;
 }
@@ -83,6 +137,7 @@
 }
 
 .summary {
+  font-size: 12px;
   margin-top: 14px;
   margin-bottom: 44px;
 }
@@ -97,12 +152,11 @@
 }
 
 .buy-options>a {
-  padding: 0 0 0 16px;
+  padding: 0 0 0 8px;
   border: 1px solid var(--color);
   margin-bottom: -1px;
 
-  font-family: Ivar Display;
-  font-weight: 700;
+  font-size: 12px;
   line-height: 1.2;
   text-decoration: none;
 
@@ -118,11 +172,14 @@
 }
 
 .buy-icon {
-  padding: 18px 10px 16px 11px;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   border-left: .5px solid var(--color);
   margin-left: 17px;
-
-  background: var(--backgroundColor);
 
   display: flex;
   align-items: center;
@@ -161,6 +218,7 @@
 }
 
 .author-bio {
+  font-size: 12px;
   line-height: 1.5;
 }
 
@@ -169,7 +227,7 @@
   border: 1px solid;
   margin-top: 32px;
 
-  font-size: 17px;
+  font-size: 12px;
 
   display: inline-flex;
   justify-content: flex-start;
@@ -234,13 +292,14 @@
 }
 
 .praise-quote {
-  margin-bottom: 24px;
+  font-size: 12px;
+  margin-bottom: 12px;
 }
 
 .praise-quote::before {
   content: "“";
   font-family: Ivar Text;
-  font-size: 80px;
+  font-size: 60px;
   display: block;
   margin-bottom: 0;
   line-height: .22;
@@ -253,17 +312,36 @@
   height: 1px;
   content: "";
   display: block;
-  margin-top: 24px;
+  margin-top: 12px;
 }
 
 .praise-name {
+  font-size: 12px;
   line-height: 1.5;
 }
 
 .praise-role {
   padding-right: 40px;
+  font-size: 12px;
   line-height: 1.5;
   opacity: .5;
+}
+
+
+/* @media only screen and (min-width: 1400px) {
+  .description-section {
+    padding-top: 20vh;
+  }
+} */
+
+@media only screen and (min-width: 1024px) {
+  .mobile-preview-section {
+    display: none;
+  }
+
+  .preview-section {
+    display: flex;
+  }
 }
 
 
@@ -273,4 +351,67 @@
     grid-template-columns: repeat(1, 1fr);
   }
 
+}
+
+@media only screen and (min-width: 600px) {
+  /* .description-section {
+    padding-top: 10vh;
+  } */
+
+  .back-button-wrapper {
+    position: sticky;
+    top: var(--padding-top);
+  }
+
+
+  .header {
+    flex-direction: row;
+  }
+
+  .mobile-preview-section {
+    padding-bottom: 0;
+  }
+
+  .header-title-section {
+    width: unset;
+  }
+
+  .title {
+    font-size: calc(16px + 1vw);
+  }
+
+  .author {
+    margin-top: 12px;
+    font-size: 21px;
+  }
+
+  .summary,
+  .author-bio,
+  .author-website,
+  .praise-quote,
+  .praise-name,
+  .praise-role {
+    font-size: 16px;
+  }
+
+  .praise-quote {
+    margin-bottom: 24px;
+  }
+
+  .praise-quote::before {
+    font-size: 80px;
+  }
+
+  .praise-quote::after {
+    margin-top: 24px;
+  }
+
+  .buy-options>a {
+    padding: 0 0 0 16px;
+    font-size: 16px;
+  }
+
+  .buy-icon {
+    /* padding: 18px 10px 16px 11px; */
+  }
 }

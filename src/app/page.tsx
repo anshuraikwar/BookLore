@@ -1,35 +1,81 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import Link from "../../node_modules/next/link";
-
-import styles from "./page.module.css";
-import { BookType } from "../types/bookType";
+import Image from 'next/image';
+import Link from "next/link";
 import { books } from '../config/bookList';
 import Book from "@/components/book/Book";
-
+import BookshelfClient from "./bookshelfClient";
 
 export default function Home() {
-  const [shuffledBookList, setShuffledBookList] = useState<BookType[]>([]);
-
-  useEffect(() => {
-    const shuffledBooks: BookType[] = books;
-    // .sort(() => Math.random() - 0.5);
-    setShuffledBookList(shuffledBooks);
-  }, []);
-
   return (
-    <div className={styles.bookshelf} id="bookshelf">
-      {shuffledBookList.map((book) => (
-        <Link href={`/${book.id}`}>
-          <Book
-            key={`book-${book.id}`}
-
-            show3DPreview={false}
-            book={{ ...book, height: 'min(60vw, 60vh)' }}
-          />
-        </Link>
-      ))}
+    <div
+      id="bookshelf"
+      className={"bookshelf"}
+    >
+      <div className="bookshelf_shell_wrapper">
+        <div className="bookshelf_shell_container">
+          <div className="bookshelf_shell">
+            <div className="top">
+              <Image
+                height={50}
+                width={500}
+                src={'/assets/img/bookshelf.webp'}
+                alt={''}
+                priority
+                objectPosition='top'
+                objectFit='cover'
+                style={{ width: '100%', height: '100%' }}
+              />
+            </div>
+            <div className="bottom">
+              <Image
+                height={50}
+                width={200}
+                src={'/assets/img/bookshelf.webp'}
+                alt={''}
+                objectPosition='bottom'
+                objectFit='cover'
+                style={{ width: '100%', height: '100%' }}
+              />
+            </div>
+            <div className="left">
+              <Image
+                height={500}
+                width={50}
+                src={'/assets/img/bookshelf.webp'}
+                alt={''}
+                priority
+                objectPosition='left'
+                objectFit='cover'
+                style={{ width: '100%', height: '100%' }}
+              />
+            </div>
+            <div className="right">
+              <Image
+                height={500}
+                width={50}
+                src={'/assets/img/bookshelf.webp'}
+                alt={''}
+                priority
+                objectPosition='right'
+                objectFit='cover'
+                style={{ width: '100%', height: '100%' }}
+              />
+            </div>
+            <div className=""></div>
+            <BookshelfClient books={books} />
+          </div>
+        </div>
+      </div>
+      <div id="bookshelf_content" className="bookshelf_content">
+        {books.map((book, i) => (
+          <Link key={book.id} href={`/${book.id}`}>
+            <Book
+              index={i}
+              show3DPreview={false}
+              book={{ ...book, height: 'min(60vw, 60vh)' }}
+            />
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }

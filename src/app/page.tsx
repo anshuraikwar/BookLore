@@ -17,7 +17,7 @@ export default function Home() {
               <Image
                 height={50}
                 width={500}
-                src={'/assets/img/bookshelf.webp'}
+                src={'/BookLore/assets/img/bookshelf.webp'}
                 alt={''}
                 priority
                 objectPosition='top'
@@ -29,7 +29,7 @@ export default function Home() {
               <Image
                 height={50}
                 width={200}
-                src={'/assets/img/bookshelf.webp'}
+                src={'/BookLore/assets/img/bookshelf.webp'}
                 alt={''}
                 objectPosition='bottom'
                 objectFit='cover'
@@ -40,7 +40,7 @@ export default function Home() {
               <Image
                 height={500}
                 width={50}
-                src={'/assets/img/bookshelf.webp'}
+                src={'/BookLore/assets/img/bookshelf.webp'}
                 alt={''}
                 priority
                 objectPosition='left'
@@ -52,7 +52,7 @@ export default function Home() {
               <Image
                 height={500}
                 width={50}
-                src={'/assets/img/bookshelf.webp'}
+                src={'/BookLore/assets/img/bookshelf.webp'}
                 alt={''}
                 priority
                 objectPosition='right'

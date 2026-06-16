@@ -108,7 +108,7 @@ export default function BookshelfClient({ books }: { books: BookType[] }) {
         <Image
           height={50}
           width={500}
-          src={'/assets/img/bookshelf.webp'}
+          src={'/BookLore/assets/img/bookshelf.webp'}
           alt={''}
           priority
           objectPosition='bottom'

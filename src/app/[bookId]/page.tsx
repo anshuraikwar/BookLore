@@ -5,6 +5,12 @@ import { BookType } from "@/types/bookType";
 import { books } from '../../config/bookList';
 import BookDetails from "@/components/bookDetails/bookDetails";
 
+export async function generateStaticParams() {
+  return books.map((book) => ({
+    bookId: book.id.toString(),
+  }));
+}
+
 type BookPagePropType = {
   params: {
     bookId: string,

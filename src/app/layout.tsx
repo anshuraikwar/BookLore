@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 
   category: "Books",
 
-  metadataBase: new URL("https://anshuraikwar.github.io/booklore"),
+  metadataBase: new URL("https://anshuraikwar.github.io/BookLore"),
 
   openGraph: {
     title: "BookLore",

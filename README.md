@@ -6,7 +6,7 @@ Books are displayed on a virtual shelf where hovering over a spine reveals subtl
 
 ## Live Demo
 
-[View the project](https://anshuraikwar.github.io/booklore/)
+[View the project](https://anshuraikwar.github.io/BookLore/)
 
 ## Features
 

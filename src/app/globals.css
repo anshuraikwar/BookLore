@@ -42,7 +42,7 @@ a {
   overflow: auto;
   position: relative;
 
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/assets/img/bookshelf.webp');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/BookLore/assets/img/bookshelf.webp');
 }
 
 .bookshelf_content {
@@ -85,7 +85,6 @@ a {
 .bookshelf_shell .bottom,
 .bookshelf_shell .shelf {
   height: var(--bookshelf-h-padding);
-  /* background-image: url('/assets/img/bookshelf.webp'); */
 }
 
 .bookshelf_shell .top,
@@ -99,7 +98,6 @@ a {
   top: 0;
   height: 100%;
   width: var(--bookshelf-h-padding);
-  /* background-image: url('/assets/img/bookshelf.webp'); */
 }
 
 .bookshelf_shell .top {

@@ -12,12 +12,12 @@ export default function BookDetailsClient({
   book,
 }: BookDetailsPropType) {
 
-  const { animate = true } = book;
+  const { id: bookId, animate = true } = book;
   useEffect(() => {
-    const container = document.getElementById(`${book.id}-book-container`);
-    const card = document.getElementById(`${book.id}-card`);
-    const bookDetails = document.getElementById(`book-details-${book.id}`);
-    const bookFrontCover = document.getElementById(`${book.id}-cover-front`);
+    const container = document.getElementById(`${bookId}-book-container`);
+    const card = document.getElementById(`${bookId}-card`);
+    const bookDetails = document.getElementById(`book-details-${bookId}`);
+    const bookFrontCover = document.getElementById(`${bookId}-cover-front`);
 
     const handleScroll = () => {
       if (bookDetails) {
@@ -87,7 +87,7 @@ export default function BookDetailsClient({
     return (() => {
       window.removeEventListener("scroll", handleScroll);
     });
-  }, [animate]);
+  }, [bookId, animate]);
 
   return (
     <></>

@@ -127,9 +127,9 @@ export default function BookDetails({
     <>
       <div id={`book-details-${book.id}`} className="book-details">
         <div className="back-button-wrapper">
-          <a href="/" className="back-button" rel="noreferrer noopener">
+          <a href="/BookLore" className="back-button" rel="noreferrer noopener">
             <Image
-              src="/assets/svg/back.svg"
+              src="/BookLore/assets/svg/back.svg"
               alt="Barns & Nobles"
               width={16}
               height={16}
@@ -188,7 +188,7 @@ export default function BookDetails({
                 <div className="buy-icon">
                   <div>
                     <Image
-                      src="/assets/svg/arrow-out.svg"
+                      src="/BookLore/assets/svg/arrow-out.svg"
                       alt="Barns & Nobles"
                       width={16}
                       height={16}
@@ -204,7 +204,7 @@ export default function BookDetails({
                 <div className="buy-icon">
                   <div>
                     <Image
-                      src="/assets/svg/arrow-out.svg"
+                      src="/BookLore/assets/svg/arrow-out.svg"
                       alt="Barns & Nobles"
                       width={16}
                       height={16}
@@ -220,7 +220,7 @@ export default function BookDetails({
                 <div className="buy-icon">
                   <div>
                     <Image
-                      src="/assets/svg/arrow-out.svg"
+                      src="/BookLore/assets/svg/arrow-out.svg"
                       alt="Barns & Nobles"
                       width={16}
                       height={16}

@@ -11,11 +11,13 @@ export type BookType = {
   coverFront: string,
   coverSpine: string,
   coverBack: string,
-  page1: string,
-  page2: string,
+  page1?: string,
+  page2?: string,
   pages: string,
   pagesVertical: string,
 
-  title: string,
-  author: string,
+  title?: string,
+  author?: string,
+
+  animate?: boolean;
 }
